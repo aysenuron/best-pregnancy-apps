@@ -17,8 +17,19 @@ export function AppCard({
   return (
     <Card className="mb-6 text-gray-700 overflow-hidden">
       <CardHeader>
-        <div className="grid gap-6 md:grid-cols-[1fr_220px] items-start">
-          {/* LEFT: Text */}
+        <div className="flex flex-col lg:flex-row gap-6 items-center">
+          {/* LEFT: App Image */}
+          <div>
+            <div className="relative max-w-3xs rounded-xl overflow-hidden border bg-gray-50">
+              <img
+                src={app.image || "/images/apps/placeholder.png"}
+                alt={`${app.name} app screenshot`}
+                className="object-cover w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          {/* RIGHT: Text */}
           <div>
             <span className="text-3xl font-bold text-gray-300">
               #{rank}
@@ -39,18 +50,6 @@ export function AppCard({
               <div className="text-sm text-gray-600">
                 {app.price}
               </div>
-            </div>
-          </div>
-
-          {/* RIGHT: App Image */}
-          <div className="w-full">
-            <div className="relative aspect-[3/4] rounded-xl overflow-hidden border bg-gray-50">
-              <img
-                src={app.image || "/images/apps/placeholder.png"}
-                alt={`${app.name} app screenshot`}
-                className="object-cover w-full h-full"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
