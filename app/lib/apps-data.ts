@@ -9,6 +9,7 @@ export interface PregnancyApp {
     cons: string[]
     privacyScore: number
     link: string
+    image: string
   }
   
   export const apps: PregnancyApp[] = [
@@ -22,7 +23,8 @@ export interface PregnancyApp {
       pros: ['Easy to use', 'Great illustrations'],
       cons: ['Ads in free version'],
       privacyScore: 8,
-      link: 'https://...'
+      link: 'https://...',
+      image: "/hero.png"
     },
     {
         id: 2,
@@ -34,7 +36,8 @@ export interface PregnancyApp {
         pros: ['Easy to use', 'Great illustrations'],
         cons: ['Ads in free version'],
         privacyScore: 8,
-        link: 'https://...'
+        link: 'https://...',
+        image: "/hero.png"
       },
     // Add 4 more...
   ]
