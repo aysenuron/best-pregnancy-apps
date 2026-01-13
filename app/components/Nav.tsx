@@ -12,9 +12,7 @@ import {
         <NavigationMenuList
           className="
             flex
-            flex-col
             gap-2
-            sm:flex-row
             sm:items-center
             sm:gap-6
           "
@@ -46,14 +44,6 @@ import {
             </NavigationMenuLink>
           </NavigationMenuItem>
   
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              href="#contact"
-              className={navigationMenuTriggerStyle()}
-            >
-              Contact
-            </NavigationMenuLink>
-          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     )

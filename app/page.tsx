@@ -70,7 +70,7 @@ export default function Home() {
       
       <main className="container mx-auto px-4 py-4">
       <Nav />
-      <section className='grid grid-cols-2 gap-5'>
+      <section className='lg:grid lg:grid-cols-2 gap-5'>
         <div>
           <img src="/hero.png" alt="Pregnant woman looking at her smart phone" />
         </div>
