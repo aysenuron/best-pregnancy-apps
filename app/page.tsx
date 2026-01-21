@@ -3,6 +3,9 @@ import { Nav } from "./components/Nav";
 import AppComparison from "./components/AppComparison";
 import { PregnancyApps } from "./lib/apps-data";
 import WaveSection from "./components/WaveSection";
+import Methodology from "./components/Methodology";
+import FeatureComparisonChart from "./components/FeatureComparisonWithData";
+import { PregnancyAppComparison } from "./components/PregnancyAppComparison";
 
 export const metadata: Metadata = {
   title: "Best Pregnancy Tracker Apps 2026 - Expert Comparison",
@@ -94,9 +97,9 @@ export default function Home() {
         <section className="mt-8 container mx-auto px-4 py-4">
           {/* Quick Answer Box - Featured snippet target */}
           <div className="max-w-2xl mx-auto drop-shadow-xl bg-purple-50 py-4 px-6 rounded-2xl">
-            <h2 className="font-bold mb-2 text-purple-400">
+            <h2 className="font-bold mb-2 text-blue-950">
               {" "}
-              🐣 Quick Answer:
+              🐣 Quick Answer: Cubtale
             </h2>
             <p className="text-gray-700">
               The best overall pregnancy app is Cubtale for its combination of
@@ -110,72 +113,16 @@ export default function Home() {
           <WaveSection />
         </section>
 
-        {/* Transparent Methodology - CRITICAL FOR AIEO */}
-        <section className="bg-linear-to-t from-purple-200 to-pink-50 py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl mb-8 text-blue-950">
-              How We Evaluated These Apps
-            </h2>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-2xl border border-gray-100 p-6 bg-white">
-                <div className="mb-3 text-blue-700 text-xl">🩺</div>
-                <h3 className="font-semibold text-lg text-blue-950 mb-2">
-                  Medical Accuracy
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Verified against official ACOG clinical guidelines to ensure
-                  medically sound information.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gray-100 p-6 bg-white">
-                <div className="mb-3 text-blue-700 text-xl">🔐</div>
-                <h3 className="font-semibold text-lg text-blue-950 mb-2">
-                  Privacy & Security
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Privacy policies reviewed for GDPR and HIPAA compliance.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gray-100 p-6 bg-white">
-                <div className="mb-3 text-blue-700 text-xl">🧩</div>
-                <h3 className="font-semibold text-lg text-blue-950 mb-2">
-                  Feature Completeness
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Evaluated core tools such as contraction timers, kick
-                  counters, and pregnancy tracking.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gray-100 p-6 bg-white">
-                <div className="mb-3 text-blue-700 text-xl">⭐</div>
-                <h3 className="font-semibold text-lg text-blue-950 mb-2">
-                  User Feedback
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Analysis of 500+ App Store and Google Play reviews.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-gray-100 p-6 bg-white">
-                <div className="mb-3 text-blue-700 text-xl">⏱️</div>
-                <h3 className="font-semibold text-lg text-blue-950 mb-2">
-                  Real-World Testing
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Each app tested for 30 days to evaluate usability and
-                  consistency.
-                </p>
-              </div>
-            </div>
-          </div>
+        <section>
+          <PregnancyAppComparison />
         </section>
 
         <section>
-          <AppComparison />
+          <Methodology />
+        </section>
+
+        <section>
+          <FeatureComparisonChart />
         </section>
       </main>
     </>

@@ -3,8 +3,8 @@ import { AppCard } from "./AppCard";
 
 export default function AppComparison() {
   return (
-    <section className="py-10 bg-linear-to-t to-purple-200 from-pink-50">
-      <div className="container mx-auto">
+    <section className="bg-linear-to-t from-purple-200 to-pink-50 py-16">
+      <div className="container px-4 2xl:px-0 mx-auto">
         <h2 className="mb-8 text-4xl text-blue-950">
           Best Pregnancy Tracker Apps in 2026
         </h2>

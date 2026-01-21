@@ -1,0 +1,174 @@
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Check, X, Star, Users, TrendingUp } from "lucide-react";
+
+type AppCardProps = {
+  name: string;
+  rating: number;
+  reviewCount: string;
+  features?: string[];
+  uniqueFeatures?: string[];
+  missingFeatures?: string[];
+  pros?: string[];
+  cons?: string[];
+  screenshot: string;
+  adoptionRate?: number;
+};
+
+export function AppCard({
+  name,
+  rating,
+  reviewCount,
+  screenshot,
+  features = [],
+  uniqueFeatures = [],
+  missingFeatures = [],
+  pros = [],
+  cons = [],
+  adoptionRate,
+}: AppCardProps) {
+  return (
+    <Card className="flex flex-col overflow-hidden">
+      <CardHeader className="bg-linear-to-br from-slate-50 via-indigo-50 to-stone-50 py-4">
+        <CardTitle className="flex flex-col gap-3">
+          {/* App Name and Rating */}
+          <div className="flex items-center justify-between">
+            <span className="text-2xl font-bold text-gray-900">{name}</span>
+            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200">
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+              <span className="text-lg font-semibold text-gray-900">
+                {rating}
+              </span>
+            </div>
+          </div>
+
+          {/* Review Count and Adoption Rate */}
+          <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-1.5">
+              <Users className="w-4 h-4" />
+              <span>{reviewCount} reviews</span>
+            </div>
+            {adoptionRate !== undefined && (
+              <div className="flex items-center gap-1.5">
+                <TrendingUp className="w-4 h-4" />
+                <span>{adoptionRate}% coverage</span>
+              </div>
+            )}
+          </div>
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent className="flex flex-col gap-6 p-6">
+        {/* Screenshot */}
+        <div className="relative mx-auto h-96 w-full overflow-hidden rounded-xl bg-gray-100">
+          <Image
+            src={screenshot}
+            alt={`${name} app screenshot`}
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Key Features */}
+        {features.length > 0 && (
+          <div>
+            <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
+              <div className="w-1 h-5 bg-gray-600 rounded-full"></div>
+              Key Features
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {features.map((feature, idx) => (
+                <li key={idx} className="flex gap-2.5 items-start">
+                  <div className="mt-0.5 flex-shrink-0">
+                    <Check className="w-4 h-4 text-gray-600" strokeWidth={3} />
+                  </div>
+                  <span className="text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Unique Features */}
+        {uniqueFeatures.length > 0 && (
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+            <h3 className="mb-3 text-lg font-bold text-blue-900 flex items-center gap-2">
+              <div className="w-1 h-5 bg-blue-600 rounded-full"></div>
+              Standout Features
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {uniqueFeatures.map((feature, idx) => (
+                <li key={idx} className="flex gap-2.5 items-start">
+                  <span className="text-blue-600 font-bold flex-shrink-0">
+                    •
+                  </span>
+                  <span className="text-blue-900 font-medium">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Missing Features */}
+        {missingFeatures.length > 0 && (
+          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+            <h3 className="mb-3 text-lg font-bold text-amber-900 flex items-center gap-2">
+              <div className="w-1 h-5 bg-amber-500 rounded-full"></div>
+              Not Available
+            </h3>
+            <ul className="space-y-2 text-sm">
+              {missingFeatures.map((feature, idx) => (
+                <li key={idx} className="flex gap-2.5 items-start">
+                  <div className="mt-0.5 flex-shrink-0">
+                    <X className="w-4 h-4 text-amber-600" strokeWidth={3} />
+                  </div>
+                  <span className="text-amber-900">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Pros */}
+        {pros.length > 0 && (
+          <div>
+            <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
+              <div className="w-1 h-5 bg-green-600 rounded-full"></div>
+              Strengths
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              {pros.map((pro, idx) => (
+                <li key={idx} className="flex gap-2.5 items-start">
+                  <span className="text-green-600 font-bold text-lg flex-shrink-0">
+                    +
+                  </span>
+                  <span className="text-gray-700 leading-relaxed">{pro}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Cons */}
+        {cons.length > 0 && (
+          <div>
+            <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
+              <div className="w-1 h-5 bg-red-500 rounded-full"></div>
+              Limitations
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              {cons.map((con, idx) => (
+                <li key={idx} className="flex gap-2.5 items-start">
+                  <span className="text-red-500 font-bold text-lg flex-shrink-0">
+                    −
+                  </span>
+                  <span className="text-gray-700 leading-relaxed">{con}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+}

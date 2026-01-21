@@ -1,19 +1,14 @@
-import Image from "next/image"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 type AppCardProps = {
-  name: string
-  rating: number
-  features?: string[]
-  pros?: string[]
-  cons?: string[]
-  screenshot: string
-}
+  name: string;
+  rating: number;
+  features?: string[];
+  pros?: string[];
+  cons?: string[];
+  screenshot: string;
+};
 
 export function AppCard({
   name,
@@ -26,11 +21,9 @@ export function AppCard({
   return (
     <Card className="flex flex-col">
       <CardHeader>
-        <CardTitle className="flex items-center justify-between">
+        <CardTitle className="text-2xl bg-purple-50 py-4 px-6 rounded-2xl text-blue-950 flex items-center justify-between">
           <span>{name}</span>
-          <span className="text-sm text-muted-foreground">
-            ⭐ {rating}
-          </span>
+          <span>⭐ {rating}</span>
         </CardTitle>
       </CardHeader>
 
@@ -47,8 +40,8 @@ export function AppCard({
 
         {/* Features */}
         {features.length > 0 ? (
-          <div>
-            <h3 className="mb-2 text-sm font-semibold">Key features</h3>
+          <div className="text-blue-950">
+            <h3 className="mb-2 text-lg font-semibold">Key features</h3>
             <ul className="space-y-2 text-sm">
               {features.map((feature) => (
                 <li key={feature} className="flex gap-2">
@@ -61,8 +54,8 @@ export function AppCard({
         ) : null}
 
         {/* Pros */}
-        <div>
-          <h3 className="mb-2 text-sm font-semibold">Pros</h3>
+        <div className="text-blue-950">
+          <h3 className="mb-2 text-lg font-semibold">Pros</h3>
           <ul className="space-y-2 text-sm">
             {pros.map((pro) => (
               <li key={pro} className="flex gap-2">
@@ -74,8 +67,8 @@ export function AppCard({
         </div>
 
         {/* Cons */}
-        <div>
-          <h3 className="mb-2 text-sm font-semibold">Cons</h3>
+        <div className="text-blue-950">
+          <h3 className="mb-2 text-lg font-semibold">Cons</h3>
           <ul className="space-y-2 text-sm">
             {cons.map((con) => (
               <li key={con} className="flex gap-2">
@@ -87,5 +80,5 @@ export function AppCard({
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
