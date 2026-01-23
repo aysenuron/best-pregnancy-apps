@@ -60,12 +60,12 @@ export function AppCard({
 
       <CardContent className="flex flex-col gap-6 p-6">
         {/* Screenshot */}
-        <div className="relative mx-auto h-96 w-full overflow-hidden rounded-xl bg-gray-100">
+        <div className="relative mx-auto h-54 lg:h-68 w-full overflow-hidden rounded-xl bg-gray-100">
           <Image
             src={screenshot}
             alt={`${name} app screenshot`}
             fill
-            className="object-cover"
+            className="w-full"
           />
         </div>
 
@@ -79,7 +79,7 @@ export function AppCard({
             <ul className="space-y-2 text-sm">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex gap-2.5 items-start">
-                  <div className="mt-0.5 flex-shrink-0">
+                  <div className="mt-0.5 shrink-0">
                     <Check className="w-4 h-4 text-gray-600" strokeWidth={3} />
                   </div>
                   <span className="text-gray-700">{feature}</span>

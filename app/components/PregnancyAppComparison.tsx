@@ -150,7 +150,7 @@ export function PregnancyAppComparison() {
             name="Ovia"
             rating={4.8}
             reviewCount="86K"
-            screenshot="/screenshots/ovia.png"
+            screenshot="/screenshots/ovia.jpg"
             features={[
               "Weekly baby development updates",
               "Health and wellness articles",
@@ -185,7 +185,7 @@ export function PregnancyAppComparison() {
             rating={4.8}
             reviewCount="71K"
             adoptionRate={60}
-            screenshot="/screenshots/pregnancy-plus.png"
+            screenshot="/screenshots/pregnancy-plus.jpg"
             features={[
               "Photo memory tracking",
               "Weight tracking",
@@ -231,7 +231,7 @@ export function PregnancyAppComparison() {
             rating={4.9}
             reviewCount="368K"
             adoptionRate={60}
-            screenshot="/screenshots/what-to-expect.png"
+            screenshot="/screenshots/what-to-expect.jpg"
             features={[
               "Photo memories and baby story",
               "Pregnancy vitamin tracking",

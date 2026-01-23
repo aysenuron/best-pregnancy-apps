@@ -455,7 +455,7 @@ const FeatureComparisonChart: React.FC = () => {
 
   const ComparisonChart = ({ data }: { data: CategoryData }) => {
     return (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+      <div className="bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden">
         {/* Header */}
         <div className="bg-linear-to-r from-indigo-100 to-purple-100 px-6 py-5">
           <h3 className="text-xl font-semibold text-blue-950">
@@ -572,14 +572,14 @@ const FeatureComparisonChart: React.FC = () => {
         </div>
 
         {/* Category Selector */}
-        <div className="mb-8 bg-white rounded-xl shadow-md p-2 inline-flex flex-wrap gap-2">
+        <div className="bg-white rounded-t-2xl py-4 lg:py-6 px-6 inline-flex justify-center flex-wrap gap-2">
           {categories.map((cat) => (
             <button
               key={cat.category}
               onClick={() => setSelectedCategory(cat.category)}
-              className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 ${
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:cursor-pointer ${
                 selectedCategory === cat.category
-                  ? "bg-blue-500 text-white shadow-lg scale-105"
+                  ? "bg-linear-to-r from-indigo-100 to-purple-100 text-blue-950 shadow-md scale-105"
                   : "bg-transparent text-gray-700 hover:bg-gray-100"
               }`}
             >

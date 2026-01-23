@@ -6,6 +6,7 @@ import WaveSection from "./components/WaveSection";
 import Methodology from "./components/Methodology";
 import FeatureComparisonChart from "./components/FeatureComparisonWithData";
 import { PregnancyAppComparison } from "./components/PregnancyAppComparison";
+import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Best Pregnancy Tracker Apps 2026 - Expert Comparison",
@@ -69,8 +70,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
-      <main>
+      <header>
         <Nav />
+      </header>
+
+      <main>
         <section className="container mx-auto px-4 py-4 lg:grid lg:grid-cols-2 gap-5">
           <div>
             <img
@@ -78,8 +82,8 @@ export default function Home() {
               alt="Pregnant woman looking at her smart phone"
             />
           </div>
-          <div className="flex flex-col gap-4 justify-center">
-            <h1 className="text-6xl text-blue-950">
+          <div className="flex flex-col gap-4 justify-center pr-4 lg:pr-0">
+            <h1 className="lg:text-6xl text-5xl text-blue-950">
               The Best Pregnancy Apps in 2026
             </h1>
             <p className="text-sm text-gray-500">
@@ -124,6 +128,10 @@ export default function Home() {
         <section>
           <FeatureComparisonChart />
         </section>
+
+        <footer>
+          <Footer />
+        </footer>
       </main>
     </>
   );
