@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Metadata } from "next";
 import { Nav } from "./components/Nav";
 import AppComparison from "./components/AppComparison";
@@ -59,6 +60,23 @@ export default function Home() {
     })),
   };
 
+  const imageObjectSchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    contentUrl:
+      "https://best-pregnancy-app.com/pregnancy-apps-comparison-chart.jpg",
+    name: "Pregnancy Apps Comparison Chart 2026",
+    description:
+      "Feature comparison of top 5 pregnancy tracker apps including Cubtale, Ovia, What to Expect, Flo, and Baby Center",
+    width: "1600",
+    height: "900",
+    uploadDate: "2026-01-06",
+    author: {
+      "@type": "Person",
+      name: "Selin Tamer",
+    },
+  };
+
   return (
     <>
       <script
@@ -68,6 +86,11 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectSchema) }}
       />
 
       <header>
@@ -127,6 +150,25 @@ export default function Home() {
 
         <section>
           <FeatureComparisonChart />
+        </section>
+
+        <section className="bg-indigo-50 py-10 overflow-hidden">
+          <div className="container lg:mx-auto px-5">
+            <div>
+              <h2 className="text-4xl mb-4 text-blue-950">
+                Save the chart to your phone!
+              </h2>
+            </div>
+            <div className="relative w-full lg:w-1/2 mx-auto aspect-[16/9]">
+              <Image
+                src="/pregnancy-apps-comparison-chart.jpg"
+                alt="Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026 including Cubtale, Ovia, What to Expect, Flo, and Baby Center"
+                fill
+                className="object-contain rounded-xl shadow-md"
+                sizes="(min-width: 1024px) 50vw, 100vw"
+              />
+            </div>
+          </div>
         </section>
 
         <footer>

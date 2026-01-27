@@ -4,7 +4,7 @@ import { Check, X, Star, Users, TrendingUp } from "lucide-react";
 
 type AppCardProps = {
   name: string;
-  rating: number;
+  rating: string;
   reviewCount: string;
   features?: string[];
   uniqueFeatures?: string[];

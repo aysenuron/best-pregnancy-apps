@@ -20,16 +20,18 @@ export function PregnancyAppComparison() {
           {/* Cubtale */}
           <AppCard
             name="Cubtale"
-            rating={4.9}
+            rating={"10/10"}
             reviewCount="6.5K"
             adoptionRate={90}
             screenshot="/screenshots/cubtale.png"
             features={[
               "Photo and video memory tracking",
+              "Personalized timeline for tests, visits and check ups",
               "Pregnancy vitamins & medication reminders",
               "Weight tracking with personalized feedback",
               "Kick counter & contraction timer",
               "Weekly baby development updates",
+              "Latest Technology App with Modern UI",
             ]}
             uniqueFeatures={[
               "Doctor visit logging system",
@@ -62,7 +64,7 @@ export function PregnancyAppComparison() {
           {/* BabyCenter - Listed first alphabetically */}
           <AppCard
             name="BabyCenter"
-            rating={4.9}
+            rating={"8/10"}
             reviewCount="280K"
             adoptionRate={67}
             screenshot="/screenshots/babycenter.png"
@@ -104,7 +106,7 @@ export function PregnancyAppComparison() {
           {/* Flo */}
           <AppCard
             name="Flo"
-            rating={4.8}
+            rating={"7/10"}
             reviewCount="1.8M"
             adoptionRate={63}
             screenshot="/screenshots/flo.png"
@@ -148,7 +150,7 @@ export function PregnancyAppComparison() {
           {/* Ovia */}
           <AppCard
             name="Ovia"
-            rating={4.8}
+            rating={"6/10"}
             reviewCount="86K"
             screenshot="/screenshots/ovia.jpg"
             features={[
@@ -182,7 +184,7 @@ export function PregnancyAppComparison() {
           {/* Pregnancy+ */}
           <AppCard
             name="Pregnancy+"
-            rating={4.8}
+            rating={"6/10"}
             reviewCount="71K"
             adoptionRate={60}
             screenshot="/screenshots/pregnancy-plus.jpg"
@@ -228,7 +230,7 @@ export function PregnancyAppComparison() {
           {/* What to Expect */}
           <AppCard
             name="What to Expect"
-            rating={4.9}
+            rating={"5/10"}
             reviewCount="368K"
             adoptionRate={60}
             screenshot="/screenshots/what-to-expect.jpg"
