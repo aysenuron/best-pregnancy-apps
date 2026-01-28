@@ -72,18 +72,25 @@ export function Nav() {
               Features
             </Link>
             <Link
-              href="#pricing"
+              href="#methodology"
               onClick={() => setOpen(false)}
               className="rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
             >
-              Pricing
+              Methodology
             </Link>
             <Link
-              href="#integrations"
+              href="#chart"
               onClick={() => setOpen(false)}
               className="rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
             >
-              Integrations
+              Comparison Chart
+            </Link>
+            <Link
+              href="#faq"
+              onClick={() => setOpen(false)}
+              className="rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
+            >
+              FAQ
             </Link>
           </nav>
         </div>

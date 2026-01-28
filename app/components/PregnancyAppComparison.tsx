@@ -22,7 +22,7 @@ export function PregnancyAppComparison() {
             name="Cubtale"
             rating={"10/10"}
             adoptionRate={90}
-            screenshot="/screenshots/cubtale.png"
+            screenshot="/screenshots/cubtale.jpg"
             link="www.cubtale.com"
             features={[
               "Photo and video memory tracking",

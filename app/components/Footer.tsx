@@ -25,7 +25,7 @@ export function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
+          <div className="col-start-3 col-end-4">
             <p className="mb-3 text-sm font-semibold text-gray-900">Explore</p>
             <ul className="space-y-2 text-sm">
               <li>
@@ -38,32 +38,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#pricing"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  Pricing Comparison
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#integrations"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  Integrations
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Trust / Legal */}
-          <div>
-            <p className="mb-3 text-sm font-semibold text-gray-900">
-              Transparency
-            </p>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/methodology"
+                  href="#methodology"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
                   Review Methodology
@@ -71,18 +46,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/affiliate-disclosure"
+                  href="#chart"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Affiliate Disclosure
+                  Comparison Chart
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/privacy-policy"
+                  href="#faq"
                   className="text-gray-600 hover:text-gray-900 transition"
                 >
-                  Privacy Policy
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -95,7 +70,6 @@ export function Footer() {
             © {new Date().getFullYear()} Best-Pregnancy-Apps.com. All rights
             reserved.
           </p>
-          <p>This site may earn commissions from qualifying purchases.</p>
         </div>
       </div>
     </footer>
