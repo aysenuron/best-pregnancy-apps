@@ -563,7 +563,7 @@ const FeatureComparisonChart: React.FC = () => {
         {/* Header */}
         <div className="mb-10">
           <h2 className="text-4xl mb-4 text-blue-950">
-            Pregnancy App Feature Comparison
+            Pregnancy App Feature Comparison Chart
           </h2>
           <p className="text-lg text-gray-600">
             Comprehensive analysis of features across leading pregnancy tracking

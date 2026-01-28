@@ -1,6 +1,9 @@
 export default function Methodology() {
   return (
-    <section className="py-10 bg-linear-to-t to-purple-200 from-pink-50">
+    <section
+      className="py-10 bg-linear-to-t to-purple-200 from-pink-50"
+      id="methodology"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl mb-8 text-blue-950">
           How We Evaluated These Apps

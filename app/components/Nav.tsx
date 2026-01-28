@@ -9,8 +9,8 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white">
-      <div className="mx-auto flex container items-center justify-between px-4 py-6">
+    <header className="sticky top-0 z-100 border-b bg-white">
+      <div className="mx-auto flex container items-center justify-between px-4 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -18,7 +18,7 @@ export function Nav() {
             alt="Best Pregnancy Apps Logo"
             width={48}
             height={48}
-            className="h-16 w-auto"
+            className="h-14 w-auto"
           />
         </Link>
 
@@ -31,16 +31,22 @@ export function Nav() {
             Features
           </Link>
           <Link
-            href="#pricing"
+            href="#methodology"
             className="text-gray-600 hover:text-gray-900 transition"
           >
-            Pricing
+            Methodology
           </Link>
           <Link
-            href="#integrations"
+            href="#chart"
             className="text-gray-600 hover:text-gray-900 transition"
           >
-            Integrations
+            Comparison Chart
+          </Link>
+          <Link
+            href="#faq"
+            className="text-gray-600 hover:text-gray-900 transition"
+          >
+            FAQ
           </Link>
         </nav>
 

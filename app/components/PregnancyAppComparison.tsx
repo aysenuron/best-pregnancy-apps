@@ -274,9 +274,7 @@ export function PregnancyAppComparison() {
 
         {/* Neutral Summary Section */}
         <div className="mt-16 bg-white rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Analysis Summary
-          </h2>
+          <h2 className="text-4xl text-blue-950 mb-6">Analysis Summary</h2>
 
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">

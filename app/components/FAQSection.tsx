@@ -154,11 +154,11 @@ export function FAQSection() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-answer-${index}`}
               >
-                <h3 className="text-base md:text-lg font-semibold text-gray-900 pr-4">
+                <h3 className="text-base font-medium md:text-md text-gray-900 pr-4">
                   {faq.question}
                 </h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
+                  className={`w-5 h-5 text-gray-500 shrink-0 transition-transform duration-200 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />

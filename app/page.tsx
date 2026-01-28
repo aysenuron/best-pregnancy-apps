@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
 import { Nav } from "./components/Nav";
-import AppComparison from "./components/AppComparison";
 import { PregnancyApps } from "./lib/apps-data";
 import WaveSection from "./components/WaveSection";
 import Methodology from "./components/Methodology";
@@ -100,9 +99,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <header>
-        <Nav />
-      </header>
+      <Nav />
 
       <main>
         <section className="container mx-auto px-4 py-4 lg:grid lg:grid-cols-2 gap-5">
@@ -147,24 +144,26 @@ export default function Home() {
           <WaveSection />
         </section>
 
-        <section>
+        <section id="features">
           <PregnancyAppComparison />
         </section>
 
-        <section>
-          <Methodology />
-        </section>
+        <Methodology />
 
-        <section>
+        <section id="chart">
           <FeatureComparisonChart />
         </section>
 
         <section className="bg-indigo-50 py-10 overflow-hidden">
           <div className="container lg:mx-auto px-5">
-            <div>
+            <div className="text-center mb-4">
               <h2 className="text-4xl mb-4 text-blue-950">
                 Save the chart to your phone!
               </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Detailed comparison chart showing features, privacy ratings, and
+                pricing of top 5 pregnancy tracker apps in 2026.
+              </p>
             </div>
             <div className="relative w-full lg:w-1/2 mx-auto aspect-[16/9]">
               <Image
