@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, X, Star, Users, TrendingUp } from "lucide-react";
+import { Check, X, Star, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type AppCardProps = {
   name: string;
   rating: string;
-  reviewCount: string;
   features?: string[];
   uniqueFeatures?: string[];
   missingFeatures?: string[];
@@ -13,12 +13,12 @@ type AppCardProps = {
   cons?: string[];
   screenshot: string;
   adoptionRate?: number;
+  link: string;
 };
 
 export function AppCard({
   name,
   rating,
-  reviewCount,
   screenshot,
   features = [],
   uniqueFeatures = [],
@@ -26,41 +26,41 @@ export function AppCard({
   pros = [],
   cons = [],
   adoptionRate,
+  link,
 }: AppCardProps) {
   return (
     <Card className="flex flex-col overflow-hidden">
       <CardHeader className="bg-linear-to-br from-slate-50 via-indigo-50 to-stone-50 py-4">
-        <CardTitle className="flex flex-col gap-3">
+        <CardTitle className="flex flex-col gap-5">
           {/* App Name and Rating */}
           <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-gray-900">{name}</span>
-            <div className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-              <span className="text-lg font-semibold text-gray-900">
-                {rating}
-              </span>
+            <div className="flex items-center gap-1.5">
+              <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+              <span className="text-2xl font-bold text-gray-900">{rating}</span>
             </div>
           </div>
 
           {/* Review Count and Adoption Rate */}
-          <div className="flex items-center gap-4 text-sm text-gray-600">
-            <div className="flex items-center gap-1.5">
-              <Users className="w-4 h-4" />
-              <span>{reviewCount} reviews</span>
-            </div>
+          <div className="flex items-center justify-between gap-4 text-sm text-gray-600">
             {adoptionRate !== undefined && (
               <div className="flex items-center gap-1.5">
                 <TrendingUp className="w-4 h-4" />
                 <span>{adoptionRate}% coverage</span>
               </div>
             )}
+            <Button asChild>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                Download
+              </a>
+            </Button>
           </div>
         </CardTitle>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-6 p-6">
         {/* Screenshot */}
-        <div className="relative mx-auto h-54 lg:h-68 w-full overflow-hidden rounded-xl bg-gray-100">
+        <div className="relative mx-auto h-54 lg:h-60 w-full overflow-hidden rounded-xl bg-gray-100">
           <Image
             src={screenshot}
             alt={`${name} app screenshot`}
@@ -99,9 +99,7 @@ export function AppCard({
             <ul className="space-y-2 text-sm">
               {uniqueFeatures.map((feature, idx) => (
                 <li key={idx} className="flex gap-2.5 items-start">
-                  <span className="text-blue-600 font-bold flex-shrink-0">
-                    •
-                  </span>
+                  <span className="text-blue-600 font-bold shrink-0">•</span>
                   <span className="text-blue-900 font-medium">{feature}</span>
                 </li>
               ))}
@@ -119,7 +117,7 @@ export function AppCard({
             <ul className="space-y-2 text-sm">
               {missingFeatures.map((feature, idx) => (
                 <li key={idx} className="flex gap-2.5 items-start">
-                  <div className="mt-0.5 flex-shrink-0">
+                  <div className="mt-0.5 shrink-0">
                     <X className="w-4 h-4 text-amber-600" strokeWidth={3} />
                   </div>
                   <span className="text-amber-900">{feature}</span>
@@ -159,7 +157,7 @@ export function AppCard({
             <ul className="space-y-2.5 text-sm">
               {cons.map((con, idx) => (
                 <li key={idx} className="flex gap-2.5 items-start">
-                  <span className="text-red-500 font-bold text-lg flex-shrink-0">
+                  <span className="text-red-500 font-bold text-lg shrink-0">
                     −
                   </span>
                   <span className="text-gray-700 leading-relaxed">{con}</span>

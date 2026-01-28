@@ -7,6 +7,8 @@ import WaveSection from "./components/WaveSection";
 import Methodology from "./components/Methodology";
 import FeatureComparisonChart from "./components/FeatureComparisonWithData";
 import { PregnancyAppComparison } from "./components/PregnancyAppComparison";
+import { FAQSection } from "./components/FAQSection";
+import { faqSchema } from "./lib/faq-schema";
 import { Footer } from "./components/Footer";
 
 export const metadata: Metadata = {
@@ -93,6 +95,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageObjectSchema) }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <header>
         <Nav />
       </header>
@@ -170,6 +177,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <FAQSection />
 
         <footer>
           <Footer />
