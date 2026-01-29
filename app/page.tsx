@@ -64,8 +64,7 @@ export default function Home() {
   const imageObjectSchema = {
     "@context": "https://schema.org",
     "@type": "ImageObject",
-    contentUrl:
-      "https://best-pregnancy-app.com/pregnancy-apps-comparison-chart.jpg",
+    contentUrl: "https://bestpregnancy.app/pregnancy-apps-comparison-chart.jpg",
     name: "Pregnancy Apps Comparison Chart 2026",
     description:
       "Feature comparison of top 5 pregnancy tracker apps including Cubtale, Ovia, What to Expect, Flo, and Baby Center",

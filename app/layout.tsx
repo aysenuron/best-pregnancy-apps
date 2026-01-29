@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://best-pregnancy-app.com"), // IMPORTANT: Replace with your domain
+  metadataBase: new URL("https://bestpregnancy.app"), // IMPORTANT: Replace with your domain
   title: {
     default: "Best Pregnancy Apps 2026 - Expert Comparison Guide",
     template: "%s | Best Pregnancy Apps", // For other pages
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     "pregnancy guide",
     "contraction timer",
   ],
-  authors: [{ name: "Selin Tamer", url: "https://best-pregnancy-app.com" }],
+  authors: [{ name: "Selin Tamer", url: "https://bestpregnancy.app" }],
   creator: "Selin Tamer",
   publisher: "Best Pregnancy Apps",
 
@@ -35,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://best-pregnancy-app.com",
+    url: "https://bestpregnancy.app",
     title: "Best Pregnancy Apps 2026 - Expert Comparison",
     description: "Independent comparison of top pregnancy tracking apps",
     siteName: "Best Pregnancy Apps",
     images: [
       {
-        url: "https://best-pregnancy-app.com/og-image.jpg",
+        url: "https://bestpregnancy.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Best Pregnancy Apps Comparison",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Best Pregnancy Apps 2026",
     description: "Independent comparison of top pregnancy tracking apps",
-    images: ["https://best-pregnancy-app.com/og-image.jpg"],
+    images: ["https://bestpregnancy.app/og-image.jpg"],
   },
 
   /* Icons */
@@ -90,6 +91,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-QZ5SHGXRPV"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QZ5SHGXRPV');
+      `,
+          }}
+        />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
