@@ -6,11 +6,13 @@ import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -107,6 +109,13 @@ export default function RootLayout({
         gtag('config', 'G-QZ5SHGXRPV');
       `,
           }}
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/hero.png"
+          imageSrcSet="/hero.png"
+          fetchPriority="high"
         />
       </head>
 

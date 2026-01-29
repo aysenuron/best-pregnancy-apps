@@ -25,7 +25,7 @@ export function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="col-start-3 col-end-4">
+          <div className="md:col-start-3 md:col-end-4">
             <p className="mb-3 text-sm font-semibold text-gray-900">Explore</p>
             <ul className="space-y-2 text-sm">
               <li>

@@ -103,9 +103,13 @@ export default function Home() {
       <main>
         <section className="container mx-auto px-4 py-4 lg:grid lg:grid-cols-2 gap-5">
           <div>
-            <img
+            <Image
               src="/hero.png"
               alt="Pregnant woman looking at her smart phone"
+              width={600}
+              height={500}
+              priority
+              sizes="(max-width: 768px) 100vw, 600px"
             />
           </div>
           <div className="flex flex-col gap-4 justify-center pr-4 lg:pr-0">
