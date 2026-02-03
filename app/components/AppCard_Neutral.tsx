@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, X, Star, TrendingUp } from "lucide-react";
@@ -14,6 +16,7 @@ type AppCardProps = {
   screenshot: string;
   adoptionRate?: number;
   link: string;
+  btnId: string;
 };
 
 export function AppCard({
@@ -27,12 +30,38 @@ export function AppCard({
   cons = [],
   adoptionRate,
   link,
+  btnId,
 }: AppCardProps) {
+  const [finalLink, setFinalLink] = useState(link);
+
+  useEffect(() => {
+    // Only modify Cubtale button
+    if (name !== "Cubtale") return;
+
+    function waitForAF(cb: () => void) {
+      if ((window as any).AF_SMART_SCRIPT) return cb();
+      setTimeout(() => waitForAF(cb), 50);
+    }
+
+    waitForAF(() => {
+      const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
+        oneLinkURL: "https://app.cubtale.com/VTch/pregnancy",
+        afParameters: {
+          mediaSource: { keys: ["utm_source"], defaultValue: "Organic" },
+          campaign: { keys: ["utm_campaign"], defaultValue: "Organic" },
+        },
+      });
+
+      if (result?.clickURL) {
+        setFinalLink(result.clickURL);
+      }
+    });
+  }, [name]);
+
   return (
     <Card className="flex flex-col overflow-hidden">
       <CardHeader className="bg-linear-to-br from-slate-50 via-indigo-50 to-stone-50 py-4">
         <CardTitle className="flex flex-col gap-5">
-          {/* App Name and Rating */}
           <div className="flex items-center justify-between">
             <span className="text-2xl font-bold text-gray-900">{name}</span>
             <div className="flex items-center gap-1.5">
@@ -40,8 +69,6 @@ export function AppCard({
               <span className="text-2xl font-bold text-gray-900">{rating}</span>
             </div>
           </div>
-
-          {/* Review Count and Adoption Rate */}
           <div className="flex items-center justify-between gap-4 text-sm text-gray-600">
             {adoptionRate !== undefined && (
               <div className="flex items-center gap-1.5">
@@ -49,8 +76,14 @@ export function AppCard({
                 <span>{adoptionRate}% coverage</span>
               </div>
             )}
+
             <Button asChild>
-              <a href={link} target="_blank" rel="noopener noreferrer">
+              <a
+                id={btnId}
+                href={finalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Download
               </a>
             </Button>
@@ -59,7 +92,6 @@ export function AppCard({
       </CardHeader>
 
       <CardContent className="flex flex-col gap-6 p-6">
-        {/* Screenshot */}
         <div className="relative mx-auto h-54 lg:h-60 w-full overflow-hidden rounded-xl bg-gray-100">
           <Image
             src={screenshot}

@@ -66,12 +66,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 
-  /* Verification tags - add when you get them */
-  verification: {
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
-  },
-
   /* Additional metadata */
   robots: {
     index: true,
@@ -116,6 +110,11 @@ export default function RootLayout({
           href="/hero.png"
           imageSrcSet="/hero.png"
           fetchPriority="high"
+        />
+
+        <Script
+          src="https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js"
+          strategy="afterInteractive"
         />
       </head>
 

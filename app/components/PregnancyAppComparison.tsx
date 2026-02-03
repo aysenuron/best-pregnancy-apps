@@ -23,7 +23,8 @@ export function PregnancyAppComparison() {
             rating={"10/10"}
             adoptionRate={90}
             screenshot="/screenshots/cubtale.jpg"
-            link="www.cubtale.com"
+            link="#"
+            btnId="cubtale-btn"
             features={[
               "Photo and video memory tracking",
               "Personalized timeline for tests, visits and check ups",
@@ -67,7 +68,8 @@ export function PregnancyAppComparison() {
             rating={"8/10"}
             adoptionRate={67}
             screenshot="/screenshots/babycenter.jpg"
-            link="www.cubtale.com"
+            link="https://www.cubtale.com"
+            btnId="babycenter-btn"
             features={[
               "Photo memories and baby story",
               "Weight tracking",
@@ -109,7 +111,8 @@ export function PregnancyAppComparison() {
             rating={"7/10"}
             adoptionRate={63}
             screenshot="/screenshots/flo.png"
-            link="www.cubtale.com"
+            link="https://www.cubtale.com"
+            btnId="flo-btn"
             features={[
               "Pregnancy vitamin tracking",
               "Weight & temperature logging",
@@ -152,7 +155,8 @@ export function PregnancyAppComparison() {
             name="Ovia"
             rating={"6/10"}
             screenshot="/screenshots/ovia.jpg"
-            link="www.cubtale.com"
+            link="https://www.cubtale.com"
+            btnId="ovia-btn"
             features={[
               "Weekly baby development updates",
               "Health and wellness articles",
@@ -187,7 +191,8 @@ export function PregnancyAppComparison() {
             rating={"6/10"}
             adoptionRate={60}
             screenshot="/screenshots/pregnancy-plus.jpg"
-            link="www.cubtale.com"
+            link="https://www.cubtale.com"
+            btnId="pregnancyplus-btn"
             features={[
               "Photo memory tracking",
               "Weight tracking",
@@ -233,7 +238,8 @@ export function PregnancyAppComparison() {
             rating={"5/10"}
             adoptionRate={60}
             screenshot="/screenshots/what-to-expect.jpg"
-            link="www.cubtale.com"
+            link="https://www.cubtale.com"
+            btnId="expect-btn"
             features={[
               "Photo memories and baby story",
               "Pregnancy vitamin tracking",
