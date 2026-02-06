@@ -68,7 +68,7 @@ export function PregnancyAppComparison() {
             rating={"8/10"}
             adoptionRate={67}
             screenshot="/screenshots/babycenter.jpg"
-            link="https://www.cubtale.com"
+            link="https://www.babycenter.com/"
             btnId="babycenter-btn"
             features={[
               "Photo memories and baby story",
@@ -111,7 +111,7 @@ export function PregnancyAppComparison() {
             rating={"7/10"}
             adoptionRate={63}
             screenshot="/screenshots/flo.png"
-            link="https://www.cubtale.com"
+            link="https://flo.health/"
             btnId="flo-btn"
             features={[
               "Pregnancy vitamin tracking",
@@ -155,7 +155,7 @@ export function PregnancyAppComparison() {
             name="Ovia"
             rating={"6/10"}
             screenshot="/screenshots/ovia.jpg"
-            link="https://www.cubtale.com"
+            link="https://www.oviahealth.com/"
             btnId="ovia-btn"
             features={[
               "Weekly baby development updates",
@@ -191,7 +191,7 @@ export function PregnancyAppComparison() {
             rating={"6/10"}
             adoptionRate={60}
             screenshot="/screenshots/pregnancy-plus.jpg"
-            link="https://www.cubtale.com"
+            link="https://philips-digital.com/pregnancy-new/"
             btnId="pregnancyplus-btn"
             features={[
               "Photo memory tracking",
@@ -238,7 +238,7 @@ export function PregnancyAppComparison() {
             rating={"5/10"}
             adoptionRate={60}
             screenshot="/screenshots/what-to-expect.jpg"
-            link="https://www.cubtale.com"
+            link="https://www.whattoexpect.com/"
             btnId="expect-btn"
             features={[
               "Photo memories and baby story",
