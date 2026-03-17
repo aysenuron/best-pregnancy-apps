@@ -9,6 +9,7 @@ import { PregnancyAppComparison } from "./components/PregnancyAppComparison";
 import { FAQSection } from "./components/FAQSection";
 import { faqSchema } from "./lib/faq-schema";
 import { Footer } from "./components/Footer";
+import { CubtaleDownloadButton } from "./components/CubtaleDownloadButton";
 
 export const metadata: Metadata = {
   title: "Best Pregnancy Tracker Apps 2026 - Expert Comparison",
@@ -130,16 +131,20 @@ export default function Home() {
         </section>
         <section className="mt-8 container mx-auto px-4 py-4">
           {/* Quick Answer Box - Featured snippet target */}
-          <div className="max-w-2xl mx-auto drop-shadow-xl bg-purple-50 py-4 px-6 rounded-2xl">
-            <h2 className="font-bold mb-2 text-blue-950">
+          <div className="max-w-2xl mx-auto drop-shadow-xl bg-purple-50 py-8 px-10 rounded-2xl">
+            <h2 className="text-2xl mb-4 text-blue-950">
               {" "}
-              🐣 Quick Answer: Cubtale
+              Quick Answer:{" "}
+              <span className="text-purple-500 text-4xl">Cubtale</span>
             </h2>
             <p className="text-gray-700">
               The best overall pregnancy app is Cubtale for its combination of
               medical accuracy, privacy protection, and comprehensive tracking
               features.
             </p>
+            <div className="mt-4">
+              <CubtaleDownloadButton id="quick-answer-download-btn" />
+            </div>
           </div>
         </section>
 

@@ -35,26 +35,31 @@ export function AppCard({
   const [finalLink, setFinalLink] = useState(link);
 
   useEffect(() => {
-    // Only modify Cubtale button
     if (name !== "Cubtale") return;
+
+    const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
+    let attempts = 0;
+    const MAX_ATTEMPTS = 40; // 2 seconds total
 
     function waitForAF(cb: () => void) {
       if ((window as any).AF_SMART_SCRIPT) return cb();
+      if (++attempts >= MAX_ATTEMPTS) {
+        setFinalLink(FALLBACK); // give up, use raw link
+        return;
+      }
       setTimeout(() => waitForAF(cb), 50);
     }
 
     waitForAF(() => {
       const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
-        oneLinkURL: "https://app.cubtale.com/VTch/pregnancy",
+        oneLinkURL: FALLBACK,
         afParameters: {
           mediaSource: { keys: ["utm_source"], defaultValue: "Organic" },
           campaign: { keys: ["utm_campaign"], defaultValue: "Organic" },
         },
       });
 
-      if (result?.clickURL) {
-        setFinalLink(result.clickURL);
-      }
+      setFinalLink(result?.clickURL || FALLBACK);
     });
   }, [name]);
 
@@ -77,16 +82,18 @@ export function AppCard({
               </div>
             )}
 
-            <Button asChild>
-              <a
-                id={btnId}
-                href={finalLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download
-              </a>
-            </Button>
+            {name === "Cubtale" && (
+              <Button asChild>
+                <a
+                  id={btnId}
+                  href={finalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download
+                </a>
+              </Button>
+            )}
           </div>
         </CardTitle>
       </CardHeader>
