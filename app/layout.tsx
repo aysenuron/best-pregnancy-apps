@@ -114,8 +114,8 @@ export default function RootLayout({
         />
 
         <Script
-          src="https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js"
-          strategy="afterInteractive"
+          src="https://s3.us-east-2.amazonaws.com/image.cubtale.link/af_code/af_initializer.js"
+          strategy="beforeInteractive"
         />
       </head>
 
