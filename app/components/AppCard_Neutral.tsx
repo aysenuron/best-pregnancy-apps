@@ -38,28 +38,15 @@ export function AppCard({
     if (name !== "Cubtale") return;
 
     const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
-    let attempts = 0;
-    const MAX_ATTEMPTS = 40; // 2 seconds total
 
     function waitForAF(cb: () => void) {
-      if ((window as any).AF_SMART_SCRIPT) return cb();
-      if (++attempts >= MAX_ATTEMPTS) {
-        setFinalLink(FALLBACK); // give up, use raw link
-        return;
-      }
-      setTimeout(() => waitForAF(cb), 50);
+      setFinalLink(FALLBACK); // give up, use raw link
     }
 
     waitForAF(() => {
-      const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
-        oneLinkURL: FALLBACK,
-        afParameters: {
-          mediaSource: { keys: ["utm_source"], defaultValue: "Organic" },
-          campaign: { keys: ["utm_campaign"], defaultValue: "Organic" },
-        },
-      });
+      
 
-      setFinalLink(result?.clickURL || FALLBACK);
+      setFinalLink(FALLBACK);
     });
   }, [name]);
 
