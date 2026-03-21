@@ -39,8 +39,8 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
       const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL: FALLBACK,
         afParameters: {
-          mediaSource: { keys: ["utm_source"], defaultValue: utmSource || "Organic" },
-          campaign: { keys: ["utm_campaign"], defaultValue: utmCampaign || "Organic" },
+          mediaSource: { keys: ["utm_source"], defaultValue: utmSource || "bestpregnancyapp_web" },
+          campaign: { keys: ["utm_campaign"], defaultValue: utmCampaign || "Pregnancy" },
           channel : { keys: ["utm_channel", "incoming_channel"], defaultValue: "bestpregnancyapp_web_channel" },
           ad: { keys: ["utm_ad", "incoming_ad"], defaultValue: "bestpregnancyapp_web_ad" },
           adSet: { keys: ["utm_adset", "incoming_adset"], defaultValue: "bestpregnancyapp_web_adset" },
