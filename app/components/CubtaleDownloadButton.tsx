@@ -7,28 +7,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
   const [link, setLink] = useState(FALLBACK);
 
   useEffect(() => {
-    let attempts = 0;
-    const MAX_ATTEMPTS = 40;
-
-    function waitForAF(cb: () => void) {
-      if ((window as any).AF_SMART_SCRIPT) return cb();
-      if (++attempts >= MAX_ATTEMPTS) {
-        setLink(FALLBACK);
-        return;
-      }
-      setTimeout(() => waitForAF(cb), 50);
-    }
-
-    waitForAF(() => {
-      const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
-        oneLinkURL: FALLBACK,
-        afParameters: {
-          mediaSource: { keys: ["utm_source"], defaultValue: "Organic" },
-          campaign: { keys: ["utm_campaign"], defaultValue: "Organic" },
-        },
-      });
-      setLink(result?.clickURL || FALLBACK);
-    });
+    setLink(FALLBACK); 
   }, []);
 
   return (
