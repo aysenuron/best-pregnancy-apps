@@ -79,6 +79,8 @@ export function AppCard({
           afSub2: { keys: ["fbclid"], defaultValue: fbclid || "" },
           afSub3: { keys: ["gbraid"], defaultValue: gbraid || "" },
           afSub4: { keys: ["wbraid"], defaultValue: wbraid || "" },
+          googleClickIdKey: googleClickIdKey,
+          deepLinkValue: "pregnancy_web",
           afCustom: [
             custom_ss_ui,
             wbraid_out,
