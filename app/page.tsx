@@ -143,7 +143,7 @@ export default function Home() {
               features.
             </p>
             <div className="mt-4">
-              <CubtaleDownloadButton id="quick-answer-download-btn" />
+              <CubtaleDownloadButton id="quick-answer-download-btn cubtale-btn" />
             </div>
           </div>
         </section>
