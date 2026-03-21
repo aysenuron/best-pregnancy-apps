@@ -116,6 +116,7 @@ export default function RootLayout({
         <Script
           src="https://s3.us-east-2.amazonaws.com/image.cubtale.link/af_code/af_initializer.js"
           strategy="beforeInteractive"
+          defer
         />
       </head>
 
