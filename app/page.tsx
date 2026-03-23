@@ -118,7 +118,7 @@ export default function Home() {
               The Best Pregnancy Apps in 2026
             </h1>
             <p className="text-sm text-gray-500">
-              Last updated: January 6, 2026
+              Last updated: March 23, 2026
             </p>
             <p className="text-md text-gray-700">
               We tested 15 pregnancy apps and selected the top 5 based on

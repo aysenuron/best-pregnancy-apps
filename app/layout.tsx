@@ -61,12 +61,6 @@ export const metadata: Metadata = {
     images: ["https://bestpregnancy.app/og-image.jpg"],
   },
 
-  /* Icons */
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
-
   /* Additional metadata */
   robots: {
     index: true,

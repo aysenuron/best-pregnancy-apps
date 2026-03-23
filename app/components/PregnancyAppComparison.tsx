@@ -12,7 +12,7 @@ export function PregnancyAppComparison() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             An independent comparison of 6 popular pregnancy tracking
             applications based on 30 core features. Data collected from App
-            Store listings and feature documentation (January 2026).
+            Store listings and feature documentation (March 2026).
           </p>
         </div>
 
@@ -44,7 +44,6 @@ export function PregnancyAppComparison() {
             ]}
             missingFeatures={[
               "Limited community features",
-              "Smaller content library compared to established brands",
             ]}
             pros={[
               "Comprehensive medical-grade health tracking",
@@ -377,7 +376,7 @@ export function PregnancyAppComparison() {
               comparison analyzed 30 core pregnancy tracking features across 6
               applications. Data was collected from App Store listings, public
               feature documentation, and hands-on testing where available
-              (January 2026). Ratings and review counts reflect Apple App Store
+              (March 2026). Ratings and review counts reflect Apple App Store
               US data. Some features may vary by platform (iOS vs Android) or
               geographic region.
             </p>

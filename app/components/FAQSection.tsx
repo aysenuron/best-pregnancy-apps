@@ -186,7 +186,7 @@ export function FAQSection() {
           </h3>
           <p className="text-gray-700 mb-4">
             This comparison is regularly updated with new features and apps.
-            Last updated: January 2026.
+            Last updated: March 2026.
           </p>
           <p className="text-sm text-gray-600">
             <strong className="text-blue-950">Medical Disclaimer:</strong>{" "}
