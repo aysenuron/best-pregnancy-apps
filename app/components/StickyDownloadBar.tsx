@@ -62,7 +62,7 @@ export function StickyDownloadBar() {
         console.log("Smart Script URL Generated:", result.clickURL);
 
         // Optional: Fire impression
-        (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
+        // (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
       }
       setLink(result?.clickURL || FALLBACK);
     });

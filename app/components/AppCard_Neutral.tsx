@@ -94,7 +94,7 @@ export function AppCard({
         console.log("Smart Script URL Generated:", result.clickURL);
 
         // Optional: Fire impression
-        (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
+        // (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
       }
       setFinalLink(result?.clickURL || FALLBACK);
     });
