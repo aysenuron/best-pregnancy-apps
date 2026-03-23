@@ -26,6 +26,7 @@ export function StickyDownloadBar() {
     const googleClickIdKey = "af_sub1";
     const googleClickIdValue = new URLSearchParams(window.location.search).get("gclid");
     const cubbyGCLID = new URLSearchParams(window.location.search).get("cubby");
+    const resolvedGCLID = cubbyGCLID || googleClickIdValue || "";
     // Set fbclid to af_sub2
     const fbclid = new URLSearchParams(window.location.search).get("fbclid");
     // Set gbraid to af_sub3
@@ -34,7 +35,6 @@ export function StickyDownloadBar() {
     // Set wbraid to af_sub4
     const wbraid = new URLSearchParams(window.location.search).get("wbraid");
     const wbraid_out = { paramKey: "wbraid", keys: ["wbraid"] };
-    const custom_ss_ui = new URLSearchParams(window.location.search).get("custom_ss_ui");
 
     waitForAF(() => {
       const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
@@ -45,14 +45,14 @@ export function StickyDownloadBar() {
           channel: { keys: ["utm_channel", "incoming_channel"], defaultValue: "bestpregnancyapp_web_channel" },
           ad: { keys: ["utm_ad", "incoming_ad"], defaultValue: "bestpregnancyapp_web_ad" },
           adSet: { keys: ["utm_adset", "incoming_adset"], defaultValue: "bestpregnancyapp_web_adset" },
-          afSub1: cubbyGCLID || googleClickIdValue,
+          afSub1: { keys: ["cubby", "gclid"], defaultValue: resolvedGCLID },
           afSub2: { keys: ["fbclid"], defaultValue: fbclid || "" },
           afSub3: { keys: ["gbraid"], defaultValue: gbraid || "" },
           afSub4: { keys: ["wbraid"], defaultValue: wbraid || "" },
           googleClickIdKey: googleClickIdKey,
           deepLinkValue: "pregnancy_web",
           afCustom: [
-            custom_ss_ui,
+            { paramKey: "af_ss_ui", defaultValue: "true" },
             wbraid_out,
             gbraid_out
           ]
