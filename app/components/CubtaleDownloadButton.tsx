@@ -51,7 +51,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
           afSub3: { keys: ["gbraid"], defaultValue: gbraid || "" },
           afSub4: { keys: ["wbraid"], defaultValue: wbraid || "" },
           googleClickIdKey: googleClickIdKey,
-          deepLinkValue: "pregnancy_web",
+          deepLinkValue: { keys: ["utm_dp", "incoming_dp", "utm_deeplink"], defaultValue: "pregnancy_web" },
           afCustom: [
             { paramKey: "af_ss_ui", defaultValue: "true" },
             wbraid_out,
