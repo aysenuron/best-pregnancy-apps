@@ -58,6 +58,12 @@ export function StickyDownloadBar() {
           ]
         },
       });
+      if (result && result.clickURL) {
+        console.log("Smart Script URL Generated:", result.clickURL);
+
+        // Optional: Fire impression
+        (window as any).AF_SMART_SCRIPT.fireImpressionsLink(result.clickURL);
+      }
       setLink(result?.clickURL || FALLBACK);
     });
 
