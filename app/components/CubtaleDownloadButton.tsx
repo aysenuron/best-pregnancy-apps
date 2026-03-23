@@ -63,7 +63,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
         console.log("Smart Script URL Generated:", result.clickURL);
 
         // Optional: Fire impression
-        (window as any).AF_SMART_SCRIPT.fireImpressionsLink(result.clickURL);
+        (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
       }
       setLink(result?.clickURL || FALLBACK);
     });
