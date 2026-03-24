@@ -100,7 +100,11 @@ export function AppCard({
         console.log("Smart Script URL Generated:", result.clickURL);
 
         // Optional: Fire impression
-        // (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
+        setTimeout(() => {
+          if ((window as any).AF_SMART_SCRIPT.fireImpressionsLink) {
+            (window as any).AF_SMART_SCRIPT.fireImpressionsLink();
+          }
+        }, 500); // Small delay to ensure impression link is ready
       }
       setFinalLink(result?.clickURL || FALLBACK);
     });
