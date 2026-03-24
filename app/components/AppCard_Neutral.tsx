@@ -70,6 +70,8 @@ export function AppCard({
     const wbraid = new URLSearchParams(window.location.search).get("wbraid");
     const wbraid_out = { paramKey: "wbraid", keys: ["wbraid"] };
 
+    const cubby_out = { paramKey: "cubby", keys: ["cubby"] };
+
     waitForAF(() => { 
       const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL: FALLBACK,
@@ -82,12 +84,15 @@ export function AppCard({
           afSub2: { keys: ["fbclid"], defaultValue: fbclid || "" },
           afSub3: { keys: ["gbraid"], defaultValue: gbraid || "" },
           afSub4: { keys: ["wbraid"], defaultValue: wbraid || "" },
+          afSub5: { keys: ["cubby"], defaultValue: cubbyGCLID || "" },
           googleClickIdKey: googleClickIdKey,
           deepLinkValue: { keys: ["utm_dp", "incoming_dp", "utm_deeplink"], defaultValue: "pregnancy_web" },
+          webReferrer: "true",
           afCustom: [
             { paramKey: "af_ss_ui", defaultValue: "true" },
             wbraid_out,
-            gbraid_out
+            gbraid_out,
+            cubby_out
           ]
         },
       });
