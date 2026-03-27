@@ -54,17 +54,17 @@ export function AppCard({
       const result = (window as any).AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL: FALLBACK,
         afParameters: {
-          mediaSource: { keys: ["utm_source"], defaultValue: "bestpregnancyapp_web" },
-          campaign: { keys: ["utm_campaign"], defaultValue: "Pregnancy" },
-          channel: { keys: ["utm_channel"], defaultValue: "bestpregnancyapp_web_channel" },
-          ad: { keys: ["utm_ad"], defaultValue: "bestpregnancyapp_web_ad" },
-          adSet: { keys: ["utm_adset"], defaultValue: "bestpregnancyapp_web_adset" },
+          mediaSource: { keys: ["utm_source", "cub_src"], defaultValue: "bestpregnancyapp_web" },
+          campaign: { keys: ["utm_campaign", "cub_cmp"], defaultValue: "Pregnancy" },
+          channel: { keys: ["utm_channel", "cub_chn"], defaultValue: "bestpregnancyapp_web_channel" },
+          ad: { keys: ["utm_ad", "cub_ad"], defaultValue: "bestpregnancyapp_web_ad" },
+          adSet: { keys: ["utm_adset", "cub_adset"], defaultValue: "bestpregnancyapp_web_adset" },
           afSub1: { keys: ["googleClickIdKey"] },
           afSub2: { keys: ["fbclid"] },
           afSub3: { keys: ["gbraid"] },
           afSub4: { keys: ["wbraid"] },
           afSub5: { keys: ["cubby"] },
-          deepLinkValue: { keys: ["utm_dp"], defaultValue: "pregnancy_web" },
+          deepLinkValue: { keys: ["utm_dp", "cub_dp"], defaultValue: "pregnancy_web" },
           webReferrer: "true",
           afCustom: [
             { paramKey: "af_ss_ui", defaultValue: "true" },
