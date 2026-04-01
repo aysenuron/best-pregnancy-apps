@@ -17,6 +17,13 @@ type AppCardProps = {
   adoptionRate?: number;
   link: string;
   btnId: string;
+  coverageLabel?: string;
+  keyFeaturesLabel?: string;
+  standoutFeaturesLabel?: string;
+  notAvailableLabel?: string;
+  strengthsLabel?: string;
+  limitationsLabel?: string;
+  downloadLabel?: string;
 };
 
 export function AppCard({
@@ -31,6 +38,13 @@ export function AppCard({
   adoptionRate,
   link,
   btnId,
+  coverageLabel = "coverage",
+  keyFeaturesLabel = "Key Features",
+  standoutFeaturesLabel = "Standout Features",
+  notAvailableLabel = "Not Available",
+  strengthsLabel = "Strengths",
+  limitationsLabel = "Limitations",
+  downloadLabel = "Download",
 }: AppCardProps) {
   const [finalLink, setFinalLink] = useState(link);
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
@@ -101,7 +115,7 @@ export function AppCard({
             {adoptionRate !== undefined && (
               <div className="flex items-center gap-1.5">
                 <TrendingUp className="w-4 h-4" />
-                <span>{adoptionRate}% coverage</span>
+                <span>{adoptionRate}% {coverageLabel}</span>
               </div>
             )}
 
@@ -113,7 +127,7 @@ export function AppCard({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Download
+                  {downloadLabel}
                 </a>
               </Button>
             )}
@@ -136,7 +150,7 @@ export function AppCard({
           <div>
             <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
               <div className="w-1 h-5 bg-gray-600 rounded-full"></div>
-              Key Features
+              {keyFeaturesLabel}
             </h3>
             <ul className="space-y-2 text-sm">
               {features.map((feature, idx) => (
@@ -156,7 +170,7 @@ export function AppCard({
           <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
             <h3 className="mb-3 text-lg font-bold text-blue-900 flex items-center gap-2">
               <div className="w-1 h-5 bg-blue-600 rounded-full"></div>
-              Standout Features
+              {standoutFeaturesLabel}
             </h3>
             <ul className="space-y-2 text-sm">
               {uniqueFeatures.map((feature, idx) => (
@@ -174,7 +188,7 @@ export function AppCard({
           <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
             <h3 className="mb-3 text-lg font-bold text-amber-900 flex items-center gap-2">
               <div className="w-1 h-5 bg-amber-500 rounded-full"></div>
-              Not Available
+              {notAvailableLabel}
             </h3>
             <ul className="space-y-2 text-sm">
               {missingFeatures.map((feature, idx) => (
@@ -194,7 +208,7 @@ export function AppCard({
           <div>
             <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
               <div className="w-1 h-5 bg-green-600 rounded-full"></div>
-              Strengths
+              {strengthsLabel}
             </h3>
             <ul className="space-y-2.5 text-sm">
               {pros.map((pro, idx) => (
@@ -214,7 +228,7 @@ export function AppCard({
           <div>
             <h3 className="mb-3 text-lg font-bold flex items-center gap-2 text-gray-900">
               <div className="w-1 h-5 bg-red-500 rounded-full"></div>
-              Limitations
+              {limitationsLabel}
             </h3>
             <ul className="space-y-2.5 text-sm">
               {cons.map((con, idx) => (

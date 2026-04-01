@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { Check, X, Minus } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/lib/translations";
 
 interface FeatureData {
   feature: string;
@@ -16,6 +18,9 @@ interface CategoryData {
 }
 
 const FeatureComparisonChart: React.FC = () => {
+  const { language } = useLanguage();
+  const tChart = translations[language].featureChart;
+
   // Actual data from Cubtale spreadsheet
   const categories: CategoryData[] = [
     {
@@ -459,11 +464,10 @@ const FeatureComparisonChart: React.FC = () => {
         {/* Header */}
         <div className="bg-linear-to-r from-indigo-100 to-purple-100 px-6 py-5">
           <h3 className="text-xl font-semibold text-blue-950">
-            {data.category}
+            {tChart.categoryLabels[data.category as keyof typeof tChart.categoryLabels] ?? data.category}
           </h3>
           <p className="text-blue-950 text-sm mt-1">
-            Comparing {data.features.length} features across {appNames.length}{" "}
-            apps
+            {tChart.comparing} {data.features.length} {tChart.featuresAcross} {appNames.length} {tChart.apps}
           </p>
         </div>
 
@@ -474,7 +478,7 @@ const FeatureComparisonChart: React.FC = () => {
             <thead className="bg-gray-50 border-b-2 border-gray-200">
               <tr>
                 <th className="px-6 py-4 text-left text-xs font-bold text-gray-700 uppercase tracking-wider w-80">
-                  Feature
+                  {tChart.featureCol}
                 </th>
                 {appNames.map((app) => (
                   <th key={app} className="px-4 py-4 text-center">
@@ -501,15 +505,15 @@ const FeatureComparisonChart: React.FC = () => {
                       <div className="flex flex-col gap-1">
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-semibold text-blue-950">
-                            {feature.feature}
+                            {tChart.featureNames[feature.feature as keyof typeof tChart.featureNames] ?? feature.feature}
                           </span>
                           <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
-                            {score}% adoption
+                            {score}% {tChart.adoption}
                           </span>
                         </div>
                         {feature.description && (
                           <span className="text-xs text-gray-600 leading-relaxed">
-                            {feature.description}
+                            {tChart.featureDescriptions[feature.feature as keyof typeof tChart.featureDescriptions] ?? feature.description}
                           </span>
                         )}
                       </div>
@@ -536,19 +540,19 @@ const FeatureComparisonChart: React.FC = () => {
                 <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center">
                   <Check className="w-4 h-4 text-emerald-600" />
                 </div>
-                <span className="text-gray-700 font-medium">Available</span>
+                <span className="text-gray-700 font-medium">{tChart.available}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center">
                   <X className="w-4 h-4 text-rose-500" />
                 </div>
-                <span className="text-gray-700 font-medium">Not Available</span>
+                <span className="text-gray-700 font-medium">{tChart.notAvailable}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
                   <Minus className="w-4 h-4 text-gray-400" />
                 </div>
-                <span className="text-gray-700 font-medium">Unknown</span>
+                <span className="text-gray-700 font-medium">{tChart.unknown}</span>
               </div>
             </div>
           </div>
@@ -563,11 +567,10 @@ const FeatureComparisonChart: React.FC = () => {
         {/* Header */}
         <div className="mb-10">
           <h2 className="text-4xl mb-4 text-blue-950">
-            Pregnancy App Feature Comparison Chart
+            {tChart.title}
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive analysis of features across leading pregnancy tracking
-            applications
+            {tChart.subtitle}
           </p>
         </div>
 
@@ -583,7 +586,7 @@ const FeatureComparisonChart: React.FC = () => {
                   : "bg-transparent text-gray-700 hover:bg-gray-100"
               }`}
             >
-              {cat.category}
+              {tChart.categoryLabels[cat.category as keyof typeof tChart.categoryLabels] ?? cat.category}
             </button>
           ))}
         </div>

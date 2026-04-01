@@ -1,7 +1,13 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/app/context/LanguageContext";
+import { translations } from "@/app/lib/translations";
 
 export function Footer() {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+
   return (
     <footer className="border-t bg-gray-50">
       <div className="mx-auto container px-4 md:px-0 py-10">
@@ -18,46 +24,32 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-gray-600 leading-relaxed lg:pr-8">
-              Independent reviews and comparisons of pregnancy and baby tracking
-              apps. Our goal is to help parents make informed, confident
-              decisions.
+              {t.description}
             </p>
           </div>
 
           {/* Navigation */}
           <div className="md:col-start-3 md:col-end-4">
-            <p className="mb-3 text-sm font-semibold text-gray-900">Explore</p>
+            <p className="mb-3 text-sm font-semibold text-gray-900">{t.explore}</p>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link
-                  href="#features"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  App Features
+                <Link href="#features" className="text-gray-600 hover:text-gray-900 transition">
+                  {t.appFeatures}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#methodology"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  Review Methodology
+                <Link href="#methodology" className="text-gray-600 hover:text-gray-900 transition">
+                  {t.reviewMethodology}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#chart"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  Comparison Chart
+                <Link href="#chart" className="text-gray-600 hover:text-gray-900 transition">
+                  {t.comparisonChart}
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#faq"
-                  className="text-gray-600 hover:text-gray-900 transition"
-                >
-                  FAQ
+                <Link href="#faq" className="text-gray-600 hover:text-gray-900 transition">
+                  {t.faq}
                 </Link>
               </li>
             </ul>
@@ -66,9 +58,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-10 border-t pt-6 text-sm text-gray-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {new Date().getFullYear()} bestpregnancy.app All rights reserved.
-          </p>
+          <p>© {new Date().getFullYear()} {t.copyright}</p>
         </div>
       </div>
     </footer>
