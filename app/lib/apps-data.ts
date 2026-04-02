@@ -12,7 +12,7 @@ export interface PregnancyApp {
   export const PregnancyApps: PregnancyApp[] = [
     {
       id: 1,
-      name: "Cubtale",
+      name: "Cubtale Pregnancy",
       slug: "cubtale",
       rating: 4.9,
       features: [

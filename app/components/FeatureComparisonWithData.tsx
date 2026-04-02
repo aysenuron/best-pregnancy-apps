@@ -21,7 +21,7 @@ const FeatureComparisonChart: React.FC = () => {
   const { language } = useLanguage();
   const tChart = translations[language].featureChart;
 
-  // Actual data from Cubtale spreadsheet
+  // Actual data from Cubtale Pregnancy spreadsheet
   const categories: CategoryData[] = [
     {
       category: "Health & Wellness Tracking",
@@ -31,7 +31,7 @@ const FeatureComparisonChart: React.FC = () => {
           description:
             "Track baby growth with photos and videos, start the baby story",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -44,7 +44,7 @@ const FeatureComparisonChart: React.FC = () => {
           description:
             "Track pregnancy vitamins, set daily reminders, partner can get reminders as well",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": false,
@@ -56,7 +56,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Weight",
           description: "Track and log weight throughout pregnancy",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -68,7 +68,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Weight feedback",
           description: "Understand if you are on track with weight gain",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -80,7 +80,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Blood Pressure",
           description: "Log and monitor blood pressure",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -92,7 +92,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Blood Pressure Feedback",
           description: "Understand if you are doing well with blood pressure",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -104,7 +104,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Temperature",
           description: "Log and understand body temperature",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -116,7 +116,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Mood",
           description: "Track your mood throughout pregnancy",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -133,7 +133,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Tests",
           description: "Test schedule - when to take which test",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -145,7 +145,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Visits",
           description: "Place where you can log visits",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -157,7 +157,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Kick",
           description: "Baby kick counter - what is normal, what to expect",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -169,7 +169,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Contractions",
           description: "Baby contractions - 5-1-1 rule, when to go to hospital",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": true,
@@ -181,7 +181,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Birth Plan PDF",
           description: "Checklist for your birth plan",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": true,
@@ -193,7 +193,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Hospital Bag PDF",
           description: "Checklist for hospital bag preparation",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -210,7 +210,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Water",
           description: "Log daily water intake",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -222,7 +222,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Apple Health/Fitbit Data",
           description: "Integrate with Apple Health or Fitbit",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -234,7 +234,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Sleep",
           description: "Log and track sleep patterns",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -246,7 +246,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Period",
           description: "Log periods after pregnancy",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -258,7 +258,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Ovulation?",
           description: "Track ovulation",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -270,7 +270,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Patterns/charts",
           description: "See your trends and patterns with logs",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -287,7 +287,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "1 app for all",
           description: "Switch to baby mode after baby is born in the same app",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": false,
@@ -299,7 +299,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Multiple caregivers",
           description: "Add family members to share access",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -311,7 +311,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Siri",
           description: "Use voice to log with Siri",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -323,7 +323,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Apple Watch",
           description: "Use your watch to track pregnancy",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": false,
             "Pregnancy+": false,
@@ -335,7 +335,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Ads",
           description: "Contains advertisements",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -352,7 +352,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Baby Name Guide",
           description: "Find and explore baby names",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -364,7 +364,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Due date calculator",
           description: "Calculate your due date",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -376,7 +376,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Horoscope calculator",
           description: "Check baby's horoscope",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: false,
             "What to Expect": true,
             "Pregnancy+": false,
@@ -388,7 +388,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Baby week calculator",
           description: "Track your baby's development by week",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": false,
             "Pregnancy+": true,
@@ -400,7 +400,7 @@ const FeatureComparisonChart: React.FC = () => {
           feature: "Weekly baby updates",
           description: "Learn how your baby is growing each week",
           apps: {
-            Cubtale: true,
+            "Cubtale Pregnancy": true,
             Flo: true,
             "What to Expect": true,
             "Pregnancy+": true,
@@ -421,7 +421,7 @@ const FeatureComparisonChart: React.FC = () => {
 
   // Get all unique app names
   const appNames = [
-    "Cubtale",
+    "Cubtale Pregnancy",
     "Flo",
     "What to Expect",
     "Pregnancy+",

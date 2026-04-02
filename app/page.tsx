@@ -68,7 +68,7 @@ export default function Home() {
     contentUrl: "https://bestpregnancy.app/pregnancy-apps-comparison-chart.jpg",
     name: "Pregnancy Apps Comparison Chart 2026",
     description:
-      "Feature comparison of top 5 pregnancy tracker apps including Cubtale, Ovia, What to Expect, Flo, and Baby Center",
+      "Feature comparison of top 5 pregnancy tracker apps including Cubtale Pregnancy, Ovia, What to Expect, Flo, and Baby Center",
     width: "1600",
     height: "900",
     uploadDate: "2026-01-06",

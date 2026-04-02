@@ -50,7 +50,7 @@ export function AppCard({
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
 
   useEffect(() => {
-    if (name !== "Cubtale") return;
+    if (name !== "Cubtale Pregnancy") return;
 
     let attempts = 0;
     const MAX_ATTEMPTS = 40;
@@ -119,7 +119,7 @@ export function AppCard({
               </div>
             )}
 
-            {name === "Cubtale" && (
+            {name === "Cubtale Pregnancy" && (
               <Button asChild>
                 <a
                   id={btnId}

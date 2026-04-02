@@ -16,16 +16,16 @@ export const translations = {
     },
     quickAnswer: {
       label: "Quick Answer:",
-      appName: "Cubtale",
+      appName: "Cubtale Pregnancy",
       description:
-        "The best overall pregnancy app is Cubtale for its combination of medical accuracy, privacy protection, and comprehensive tracking features.",
+        "The best overall pregnancy app is Cubtale Pregnancy for its combination of medical accuracy, privacy protection, and comprehensive tracking features.",
     },
     chartSection: {
       title: "Save the chart to your phone!",
       subtitle:
         "Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026.",
       imgAlt:
-        "Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026 including Cubtale, Ovia, What to Expect, Flo, and Baby Center",
+        "Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026 including Cubtale Pregnancy, Ovia, What to Expect, Flo, and Baby Center",
     },
     methodology: {
       title: "How We Evaluated These Apps",
@@ -74,17 +74,17 @@ export const translations = {
         {
           question: "Which pregnancy app has the most comprehensive health tracking?",
           answer:
-            "Apps vary significantly in health tracking capabilities. Cubtale offers the most comprehensive medical-grade tracking including blood pressure monitoring, temperature logging, doctor visit documentation, and medication reminders. Flo provides strong mood and sleep tracking. Most apps include basic weight tracking, but advanced health monitoring features are less common across the market.",
+            "Apps vary significantly in health tracking capabilities. Cubtale Pregnancy offers the most comprehensive medical-grade tracking including blood pressure monitoring, temperature logging, doctor visit documentation, and medication reminders. Flo provides strong mood and sleep tracking. Most apps include basic weight tracking, but advanced health monitoring features are less common across the market.",
         },
         {
           question: "Can pregnancy tracking apps integrate with Apple Health or Fitbit?",
           answer:
-            "Device integration varies by app. Currently, Cubtale is the only app in this comparison that integrates with Apple Health and Fitbit. Most pregnancy apps operate as standalone applications without syncing to health platforms or wearable devices. If device integration is important to you, verify compatibility before choosing an app.",
+            "Device integration varies by app. Currently, Cubtale Pregnancy is the only app in this comparison that integrates with Apple Health and Fitbit. Most pregnancy apps operate as standalone applications without syncing to health platforms or wearable devices. If device integration is important to you, verify compatibility before choosing an app.",
         },
         {
           question: "Do pregnancy apps work with Apple Watch or support voice commands?",
           answer:
-            "Wearable device support is rare among pregnancy tracking apps. In this comparison, only Cubtale offers an Apple Watch companion app and Siri voice command integration. Most pregnancy apps are limited to smartphone interfaces and do not support smartwatch tracking or voice assistants.",
+            "Wearable device support is rare among pregnancy tracking apps. In this comparison, only Cubtale Pregnancy offers an Apple Watch companion app and Siri voice command integration. Most pregnancy apps are limited to smartphone interfaces and do not support smartwatch tracking or voice assistants.",
         },
         {
           question: "Which pregnancy app has the largest community?",
@@ -94,7 +94,7 @@ export const translations = {
         {
           question: "Are there pregnancy apps that can be used after the baby is born?",
           answer:
-            "Yes, several apps offer seamless transition to baby tracking mode. Cubtale, What to Expect, BabyCenter, and Flo all support continued use after birth for tracking feeding, diaper changes, sleep schedules, and baby development milestones. Pregnancy+ does not offer post-birth baby tracking functionality.",
+            "Yes, several apps offer seamless transition to baby tracking mode. Cubtale Pregnancy, What to Expect, BabyCenter, and Flo all support continued use after birth for tracking feeding, diaper changes, sleep schedules, and baby development milestones. Pregnancy+ does not offer post-birth baby tracking functionality.",
         },
         {
           question: "What is the difference between free and paid pregnancy apps?",
@@ -109,17 +109,17 @@ export const translations = {
         {
           question: "Can I share my pregnancy tracking data with my doctor?",
           answer:
-            "Most pregnancy apps allow data export, though methods vary. Some apps like Cubtale offer PDF report generation specifically designed for doctor visits. Others allow data export via email or print. Check your app's export features before your appointment. Some apps with healthcare provider partnerships may offer direct data sharing, but this is uncommon.",
+            "Most pregnancy apps allow data export, though methods vary. Some apps like Cubtale Pregnancy offer PDF report generation specifically designed for doctor visits. Others allow data export via email or print. Check your app's export features before your appointment. Some apps with healthcare provider partnerships may offer direct data sharing, but this is uncommon.",
         },
         {
           question: "Which pregnancy apps work best for tracking twins or multiples?",
           answer:
-            "Multi-child tracking capabilities vary significantly. Look for apps that explicitly support multiple babies with separate profiles and tracking. Some apps like Cubtale offer multi-child tracking in premium tiers. When tracking twins or multiples, you'll need separate kick counters, growth tracking, and photo storage for each baby. Verify multi-child support before committing to an app.",
+            "Multi-child tracking capabilities vary significantly. Look for apps that explicitly support multiple babies with separate profiles and tracking. Some apps like Cubtale Pregnancy offer multi-child tracking in premium tiers. When tracking twins or multiples, you'll need separate kick counters, growth tracking, and photo storage for each baby. Verify multi-child support before committing to an app.",
         },
         {
           question: "Do pregnancy apps offer contraction timers for labor?",
           answer:
-            "Many pregnancy apps include contraction timers. BabyCenter, Cubtale, Pregnancy+, and What to Expect all offer contraction timing features. These typically track contraction duration, frequency, and pattern to help you identify true labor. The 5-1-1 rule (contractions 5 minutes apart, lasting 1 minute, for 1 hour) is commonly referenced. Flo currently does not include a contraction timer.",
+            "Many pregnancy apps include contraction timers. BabyCenter, Cubtale Pregnancy, Pregnancy+, and What to Expect all offer contraction timing features. These typically track contraction duration, frequency, and pattern to help you identify true labor. The 5-1-1 rule (contractions 5 minutes apart, lasting 1 minute, for 1 hour) is commonly referenced. Flo currently does not include a contraction timer.",
         },
         {
           question: "Are pregnancy tracking apps HIPAA compliant?",
@@ -129,7 +129,7 @@ export const translations = {
         {
           question: "What's the best pregnancy app for first-time moms?",
           answer:
-            "First-time parents often benefit from apps with extensive educational content and strong communities. What to Expect and BabyCenter offer trusted, expert-reviewed content libraries and active forums. Cubtale provides comprehensive tracking if you prefer detailed health monitoring. Flo works well if you've been using it for cycle tracking. Consider downloading 2-3 apps initially to find which interface and features match your preferences.",
+            "First-time parents often benefit from apps with extensive educational content and strong communities. What to Expect and BabyCenter offer trusted, expert-reviewed content libraries and active forums. Cubtale Pregnancy provides comprehensive tracking if you prefer detailed health monitoring. Flo works well if you've been using it for cycle tracking. Consider downloading 2-3 apps initially to find which interface and features match your preferences.",
         },
         {
           question: "Do pregnancy apps require internet connection to work?",
@@ -144,17 +144,17 @@ export const translations = {
         {
           question: "Can pregnancy apps track blood pressure during pregnancy?",
           answer:
-            "Blood pressure tracking availability is limited. In this comparison, only Cubtale offers dedicated blood pressure tracking with feedback on whether readings are within normal ranges. Blood pressure monitoring is particularly important for detecting preeclampsia and other pregnancy complications. If your provider recommends regular blood pressure monitoring, verify your chosen app supports this feature or consider using a dedicated blood pressure tracking app.",
+            "Blood pressure tracking availability is limited. In this comparison, only Cubtale Pregnancy offers dedicated blood pressure tracking with feedback on whether readings are within normal ranges. Blood pressure monitoring is particularly important for detecting preeclampsia and other pregnancy complications. If your provider recommends regular blood pressure monitoring, verify your chosen app supports this feature or consider using a dedicated blood pressure tracking app.",
         },
         {
           question: "What pregnancy apps offer medication and vitamin reminders?",
           answer:
-            "Medication tracking features vary by app. Cubtale, Flo, and What to Expect offer pregnancy vitamin and medication reminders. Features may include daily reminders, dosage tracking, and partner notifications. If you take prenatal vitamins, additional supplements, or medications during pregnancy, this feature can help ensure consistent compliance. Some apps limit reminders to free users; check premium requirements.",
+            "Medication tracking features vary by app. Cubtale Pregnancy, Flo, and What to Expect offer pregnancy vitamin and medication reminders. Features may include daily reminders, dosage tracking, and partner notifications. If you take prenatal vitamins, additional supplements, or medications during pregnancy, this feature can help ensure consistent compliance. Some apps limit reminders to free users; check premium requirements.",
         },
         {
           question: "Are there pregnancy apps specifically for high-risk pregnancies?",
           answer:
-            "While no mainstream consumer apps are specifically designed for high-risk pregnancies, apps with comprehensive health tracking features may be beneficial. Look for apps offering blood pressure tracking, detailed symptom logging, medication management, and easy data export for healthcare providers. Apps like Cubtale with doctor visit logging and medical-grade tracking may be helpful. Always follow your healthcare provider's specific monitoring recommendations for high-risk pregnancies.",
+            "While no mainstream consumer apps are specifically designed for high-risk pregnancies, apps with comprehensive health tracking features may be beneficial. Look for apps offering blood pressure tracking, detailed symptom logging, medication management, and easy data export for healthcare providers. Apps like Cubtale Pregnancy with doctor visit logging and medical-grade tracking may be helpful. Always follow your healthcare provider's specific monitoring recommendations for high-risk pregnancies.",
         },
         {
           question: "How do I choose between multiple pregnancy tracking apps?",
@@ -164,7 +164,7 @@ export const translations = {
         {
           question: "Can pregnancy apps help with birth planning?",
           answer:
-            "Several pregnancy apps offer birth planning features. Cubtale, Flo, and What to Expect provide birth plan creation tools, often with customizable checklists and PDF export options. These typically cover preferences for pain management, delivery positions, immediate postpartum care, and newborn procedures. Hospital bag checklists are commonly included. While helpful for organization, always discuss your birth plan with your healthcare provider well before your due date.",
+            "Several pregnancy apps offer birth planning features. Cubtale Pregnancy, Flo, and What to Expect provide birth plan creation tools, often with customizable checklists and PDF export options. These typically cover preferences for pain management, delivery positions, immediate postpartum care, and newborn procedures. Hospital bag checklists are commonly included. While helpful for organization, always discuss your birth plan with your healthcare provider well before your due date.",
         },
       ],
     },
@@ -212,7 +212,7 @@ export const translations = {
       keyDifferentiators: "Key Differentiators by App",
       differentiators: {
         BabyCenter: "Largest community, extensive article library",
-        Cubtale: "Medical-grade tracking, full device integration",
+        "Cubtale Pregnancy": "Medical-grade tracking, full device integration",
         Flo: "Cycle tracking heritage, massive user base (1.8M reviews)",
         Ovia: "Healthcare provider partnerships, research-backed",
         "Pregnancy+": "3D visualizations, focused pregnancy-only app",
@@ -229,7 +229,7 @@ export const translations = {
       limitations: "Limitations",
       download: "Download",
       apps: {
-        Cubtale: {
+        "Cubtale Pregnancy": {
           features: [
             "Photo and video memory tracking",
             "Personalized timeline for tests, visits and check ups",
@@ -535,7 +535,7 @@ export const translations = {
       copyright: "bestpregnancy.app All rights reserved.",
     },
     sticky: {
-      download: "🤍 Download Cubtale",
+      download: "🤍 Download Cubtale Pregnancy",
     },
     common: {
       download: "Download",
@@ -559,16 +559,16 @@ export const translations = {
     },
     quickAnswer: {
       label: "Respuesta Rápida:",
-      appName: "Cubtale",
+      appName: "Cubtale Pregnancy",
       description:
-        "La mejor aplicación de embarazo en general es Cubtale por su combinación de precisión médica, protección de privacidad y funciones de seguimiento integrales.",
+        "La mejor aplicación de embarazo en general es Cubtale Pregnancy por su combinación de precisión médica, protección de privacidad y funciones de seguimiento integrales.",
     },
     chartSection: {
       title: "¡Guarda la tabla en tu teléfono!",
       subtitle:
         "Tabla comparativa detallada con funciones, calificaciones de privacidad y precios de las 5 mejores apps de seguimiento de embarazo en 2026.",
       imgAlt:
-        "Tabla comparativa detallada con funciones, calificaciones de privacidad y precios de las 5 mejores apps de embarazo en 2026 incluyendo Cubtale, Ovia, What to Expect, Flo y Baby Center",
+        "Tabla comparativa detallada con funciones, calificaciones de privacidad y precios de las 5 mejores apps de embarazo en 2026 incluyendo Cubtale Pregnancy, Ovia, What to Expect, Flo y Baby Center",
     },
     methodology: {
       title: "Cómo Evaluamos Estas Apps",
@@ -617,17 +617,17 @@ export const translations = {
         {
           question: "¿Qué app de embarazo tiene el seguimiento de salud más completo?",
           answer:
-            "Las apps varían significativamente en sus capacidades de seguimiento. Cubtale ofrece el seguimiento médico más completo, incluyendo monitoreo de presión arterial, registro de temperatura, documentación de visitas médicas y recordatorios de medicamentos. Flo proporciona un sólido seguimiento del estado de ánimo y el sueño. La mayoría de las apps incluyen seguimiento básico de peso, pero las funciones avanzadas de monitoreo de salud son menos comunes.",
+            "Las apps varían significativamente en sus capacidades de seguimiento. Cubtale Pregnancy ofrece el seguimiento médico más completo, incluyendo monitoreo de presión arterial, registro de temperatura, documentación de visitas médicas y recordatorios de medicamentos. Flo proporciona un sólido seguimiento del estado de ánimo y el sueño. La mayoría de las apps incluyen seguimiento básico de peso, pero las funciones avanzadas de monitoreo de salud son menos comunes.",
         },
         {
           question: "¿Las apps de embarazo se integran con Apple Health o Fitbit?",
           answer:
-            "La integración con dispositivos varía según la app. Actualmente, Cubtale es la única app en esta comparativa que se integra con Apple Health y Fitbit. La mayoría de las apps de embarazo funcionan como aplicaciones independientes sin sincronización con plataformas de salud o dispositivos portátiles. Si la integración es importante para ti, verifica la compatibilidad antes de elegir.",
+            "La integración con dispositivos varía según la app. Actualmente, Cubtale Pregnancy es la única app en esta comparativa que se integra con Apple Health y Fitbit. La mayoría de las apps de embarazo funcionan como aplicaciones independientes sin sincronización con plataformas de salud o dispositivos portátiles. Si la integración es importante para ti, verifica la compatibilidad antes de elegir.",
         },
         {
           question: "¿Las apps de embarazo funcionan con Apple Watch o admiten comandos de voz?",
           answer:
-            "El soporte para dispositivos portátiles es poco común entre las apps de seguimiento. En esta comparativa, solo Cubtale ofrece una app complementaria para Apple Watch e integración con comandos de voz de Siri. La mayoría de las apps están limitadas a interfaces de smartphone y no admiten seguimiento con smartwatch ni asistentes de voz.",
+            "El soporte para dispositivos portátiles es poco común entre las apps de seguimiento. En esta comparativa, solo Cubtale Pregnancy ofrece una app complementaria para Apple Watch e integración con comandos de voz de Siri. La mayoría de las apps están limitadas a interfaces de smartphone y no admiten seguimiento con smartwatch ni asistentes de voz.",
         },
         {
           question: "¿Qué app de embarazo tiene la comunidad más grande?",
@@ -637,7 +637,7 @@ export const translations = {
         {
           question: "¿Hay apps de embarazo que se puedan usar después de que nazca el bebé?",
           answer:
-            "Sí, varias apps ofrecen una transición fluida al modo de seguimiento del bebé. Cubtale, What to Expect, BabyCenter y Flo admiten uso continuo después del parto para registrar alimentación, cambios de pañal, horarios de sueño e hitos del desarrollo del bebé. Pregnancy+ no ofrece funcionalidad de seguimiento del bebé después del nacimiento.",
+            "Sí, varias apps ofrecen una transición fluida al modo de seguimiento del bebé. Cubtale Pregnancy, What to Expect, BabyCenter y Flo admiten uso continuo después del parto para registrar alimentación, cambios de pañal, horarios de sueño e hitos del desarrollo del bebé. Pregnancy+ no ofrece funcionalidad de seguimiento del bebé después del nacimiento.",
         },
         {
           question: "¿Cuál es la diferencia entre las apps de embarazo gratuitas y de pago?",
@@ -652,17 +652,17 @@ export const translations = {
         {
           question: "¿Puedo compartir mis datos de seguimiento con mi médico?",
           answer:
-            "La mayoría de las apps permiten exportar datos, aunque los métodos varían. Algunas apps como Cubtale ofrecen generación de informes PDF diseñados específicamente para visitas médicas. Otras permiten exportar datos por correo electrónico o impresión. Verifica las funciones de exportación de tu app antes de tu cita. Algunas apps con asociaciones con proveedores de salud pueden ofrecer compartir datos directamente, pero esto es poco común.",
+            "La mayoría de las apps permiten exportar datos, aunque los métodos varían. Algunas apps como Cubtale Pregnancy ofrecen generación de informes PDF diseñados específicamente para visitas médicas. Otras permiten exportar datos por correo electrónico o impresión. Verifica las funciones de exportación de tu app antes de tu cita. Algunas apps con asociaciones con proveedores de salud pueden ofrecer compartir datos directamente, pero esto es poco común.",
         },
         {
           question: "¿Qué apps de embarazo funcionan mejor para seguir gemelos o múltiples?",
           answer:
-            "Las capacidades de seguimiento de múltiples bebés varían considerablemente. Busca apps que admitan explícitamente varios bebés con perfiles y seguimiento separados. Algunas apps como Cubtale ofrecen seguimiento de múltiples hijos en niveles premium. Al seguir gemelos o múltiples, necesitarás contadores de patadas, seguimiento de crecimiento y almacenamiento de fotos separados para cada bebé. Verifica el soporte para múltiples hijos antes de comprometerte.",
+            "Las capacidades de seguimiento de múltiples bebés varían considerablemente. Busca apps que admitan explícitamente varios bebés con perfiles y seguimiento separados. Algunas apps como Cubtale Pregnancy ofrecen seguimiento de múltiples hijos en niveles premium. Al seguir gemelos o múltiples, necesitarás contadores de patadas, seguimiento de crecimiento y almacenamiento de fotos separados para cada bebé. Verifica el soporte para múltiples hijos antes de comprometerte.",
         },
         {
           question: "¿Las apps de embarazo ofrecen cronómetros de contracciones para el parto?",
           answer:
-            "Muchas apps de embarazo incluyen cronómetros de contracciones. BabyCenter, Cubtale, Pregnancy+ y What to Expect ofrecen funciones de cronometrado de contracciones. Estas generalmente registran la duración, frecuencia y patrón para ayudarte a identificar el trabajo de parto verdadero. La regla 5-1-1 (contracciones cada 5 minutos, durante 1 minuto, por 1 hora) es comúnmente referenciada. Flo actualmente no incluye cronómetro de contracciones.",
+            "Muchas apps de embarazo incluyen cronómetros de contracciones. BabyCenter, Cubtale Pregnancy, Pregnancy+ y What to Expect ofrecen funciones de cronometrado de contracciones. Estas generalmente registran la duración, frecuencia y patrón para ayudarte a identificar el trabajo de parto verdadero. La regla 5-1-1 (contracciones cada 5 minutos, durante 1 minuto, por 1 hora) es comúnmente referenciada. Flo actualmente no incluye cronómetro de contracciones.",
         },
         {
           question: "¿Las apps de seguimiento de embarazo cumplen con HIPAA?",
@@ -672,7 +672,7 @@ export const translations = {
         {
           question: "¿Cuál es la mejor app de embarazo para madres primerizas?",
           answer:
-            "Los padres primerizos a menudo se benefician de apps con contenido educativo extenso y comunidades sólidas. What to Expect y BabyCenter ofrecen bibliotecas de contenido revisado por expertos y foros activos. Cubtale proporciona seguimiento integral si prefieres monitoreo detallado de salud. Flo funciona bien si ya la usabas para el seguimiento del ciclo. Considera descargar 2-3 apps inicialmente para encontrar cuál se adapta mejor a tus preferencias.",
+            "Los padres primerizos a menudo se benefician de apps con contenido educativo extenso y comunidades sólidas. What to Expect y BabyCenter ofrecen bibliotecas de contenido revisado por expertos y foros activos. Cubtale Pregnancy proporciona seguimiento integral si prefieres monitoreo detallado de salud. Flo funciona bien si ya la usabas para el seguimiento del ciclo. Considera descargar 2-3 apps inicialmente para encontrar cuál se adapta mejor a tus preferencias.",
         },
         {
           question: "¿Las apps de embarazo requieren conexión a internet para funcionar?",
@@ -687,17 +687,17 @@ export const translations = {
         {
           question: "¿Las apps de embarazo pueden registrar la presión arterial?",
           answer:
-            "El seguimiento de presión arterial es limitado. En esta comparativa, solo Cubtale ofrece seguimiento dedicado de presión arterial con retroalimentación sobre si las lecturas están dentro de rangos normales. El monitoreo de presión arterial es particularmente importante para detectar preeclampsia y otras complicaciones. Si tu médico recomienda monitoreo regular, verifica que tu app elegida lo soporte.",
+            "El seguimiento de presión arterial es limitado. En esta comparativa, solo Cubtale Pregnancy ofrece seguimiento dedicado de presión arterial con retroalimentación sobre si las lecturas están dentro de rangos normales. El monitoreo de presión arterial es particularmente importante para detectar preeclampsia y otras complicaciones. Si tu médico recomienda monitoreo regular, verifica que tu app elegida lo soporte.",
         },
         {
           question: "¿Qué apps de embarazo ofrecen recordatorios de medicamentos y vitaminas?",
           answer:
-            "Las funciones de seguimiento de medicamentos varían. Cubtale, Flo y What to Expect ofrecen recordatorios de vitaminas prenatales y medicamentos. Las funciones pueden incluir recordatorios diarios, seguimiento de dosis y notificaciones para la pareja. Si tomas vitaminas prenatales, suplementos adicionales o medicamentos durante el embarazo, esta función puede ayudar a asegurar el cumplimiento. Algunas apps limitan los recordatorios en usuarios gratuitos; verifica los requisitos premium.",
+            "Las funciones de seguimiento de medicamentos varían. Cubtale Pregnancy, Flo y What to Expect ofrecen recordatorios de vitaminas prenatales y medicamentos. Las funciones pueden incluir recordatorios diarios, seguimiento de dosis y notificaciones para la pareja. Si tomas vitaminas prenatales, suplementos adicionales o medicamentos durante el embarazo, esta función puede ayudar a asegurar el cumplimiento. Algunas apps limitan los recordatorios en usuarios gratuitos; verifica los requisitos premium.",
         },
         {
           question: "¿Existen apps de embarazo específicas para embarazos de alto riesgo?",
           answer:
-            "Aunque ninguna app mainstream está diseñada específicamente para embarazos de alto riesgo, las apps con seguimiento de salud integral pueden ser beneficiosas. Busca apps que ofrezcan seguimiento de presión arterial, registro detallado de síntomas, gestión de medicamentos y exportación fácil de datos para profesionales de salud. Apps como Cubtale con registro de visitas médicas pueden ser útiles. Sigue siempre las recomendaciones específicas de tu médico.",
+            "Aunque ninguna app mainstream está diseñada específicamente para embarazos de alto riesgo, las apps con seguimiento de salud integral pueden ser beneficiosas. Busca apps que ofrezcan seguimiento de presión arterial, registro detallado de síntomas, gestión de medicamentos y exportación fácil de datos para profesionales de salud. Apps como Cubtale Pregnancy con registro de visitas médicas pueden ser útiles. Sigue siempre las recomendaciones específicas de tu médico.",
         },
         {
           question: "¿Cómo elijo entre varias apps de seguimiento de embarazo?",
@@ -707,7 +707,7 @@ export const translations = {
         {
           question: "¿Las apps de embarazo pueden ayudar con la planificación del parto?",
           answer:
-            "Varias apps ofrecen funciones de planificación del parto. Cubtale, Flo y What to Expect proporcionan herramientas de creación de planes de parto, frecuentemente con listas de verificación personalizables y opciones de exportación en PDF. Estas suelen cubrir preferencias para el manejo del dolor, posiciones de parto, cuidado posparto inmediato y procedimientos del recién nacido. Las listas para la bolsa del hospital se incluyen comúnmente. Siempre habla de tu plan de parto con tu médico con anticipación.",
+            "Varias apps ofrecen funciones de planificación del parto. Cubtale Pregnancy, Flo y What to Expect proporcionan herramientas de creación de planes de parto, frecuentemente con listas de verificación personalizables y opciones de exportación en PDF. Estas suelen cubrir preferencias para el manejo del dolor, posiciones de parto, cuidado posparto inmediato y procedimientos del recién nacido. Las listas para la bolsa del hospital se incluyen comúnmente. Siempre habla de tu plan de parto con tu médico con anticipación.",
         },
       ],
     },
@@ -755,7 +755,7 @@ export const translations = {
       keyDifferentiators: "Diferenciadores Clave por App",
       differentiators: {
         BabyCenter: "Mayor comunidad, extensa biblioteca de artículos",
-        Cubtale: "Seguimiento médico avanzado, integración completa con dispositivos",
+        "Cubtale Pregnancy": "Seguimiento médico avanzado, integración completa con dispositivos",
         Flo: "Herencia en seguimiento del ciclo, enorme base de usuarias (1.8M reseñas)",
         Ovia: "Asociaciones con proveedores de salud, respaldo científico",
         "Pregnancy+": "Visualizaciones 3D, app exclusiva para embarazo",
@@ -772,7 +772,7 @@ export const translations = {
       limitations: "Limitaciones",
       download: "Descargar",
       apps: {
-        Cubtale: {
+        "Cubtale Pregnancy": {
           features: [
             "Seguimiento de recuerdos con fotos y videos",
             "Cronograma personalizado de análisis, visitas y controles",
@@ -1078,7 +1078,7 @@ export const translations = {
       copyright: "bestpregnancy.app Todos los derechos reservados.",
     },
     sticky: {
-      download: "🤍 Descargar Cubtale",
+      download: "🤍 Descargar Cubtale Pregnancy",
     },
     common: {
       download: "Descargar",

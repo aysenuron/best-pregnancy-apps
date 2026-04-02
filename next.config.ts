@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* Pin Turbopack root to prevent it scanning parent dirs with stray lockfiles */
+  turbopack: {
+    root: process.cwd(),
+  },
+
   /* Image optimization for better performance */
   images: {
     formats: ['image/avif', 'image/webp'],
