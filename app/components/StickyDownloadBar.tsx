@@ -36,6 +36,7 @@ export function StickyDownloadBar() {
           webReferrer: "true",
           afCustom: [
             { paramKey: "af_ss_ui", defaultValue: "true" },
+            { paramKey: "af_c_id", keys: ["utm_id"] },
           ]
         },
       });
