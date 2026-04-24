@@ -83,6 +83,8 @@ export function AppCard({
           afCustom: [
             { paramKey: "af_ss_ui", defaultValue: "true" },
             { paramKey: "af_c_id", keys: ["utm_id"] },
+            { paramKey: "af_android_store_csl", defaultValue: "pregnancy" },
+            { paramKey: "af_ios_store_cpp", defaultValue: "16b7139e-7c0d-46d8-892a-4919486526c6" },
           ]
         },
       });
