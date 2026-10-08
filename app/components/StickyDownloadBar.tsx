@@ -1,12 +1,60 @@
 "use client";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { LegacyDownloadBar } from "./LegacyDownloadBar";
 // import { useEffect, useState } from "react";
 
 const FREE_PUMP_URL =
   "https://cubtale.covermypregnancy.com/get-started?utm_source=cubtale&utm_medium=web&utm_campaign=bestpregnancyapp";
 
 export function StickyDownloadBar() {
+  const [showPumpOffer, setShowPumpOffer] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    let disposed = false;
+    const timeout = window.setTimeout(() => controller.abort(), 2500);
+
+    async function detectCountry() {
+      try {
+        const response = await fetch("/api/visitor-country", {
+          cache: "no-store",
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error("Country lookup failed");
+        const result = await response.json();
+        if (!disposed) setShowPumpOffer(result.showPumpOffer === true);
+      } catch {
+        // Unknown locations and network errors always get the app download.
+        if (!disposed) setShowPumpOffer(false);
+      } finally {
+        window.clearTimeout(timeout);
+      }
+    }
+
+    void detectCountry();
+    return () => {
+      disposed = true;
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
+  }, []);
+
+  if (showPumpOffer === null) {
+    return (
+      <>
+        {/* Avoid flashing the wrong CTA while the country is being resolved. */}
+        <div className="pump-bar-spacer" aria-hidden="true" />
+        <noscript><LegacyDownloadBar track={false} /></noscript>
+      </>
+    );
+  }
+
+  return showPumpOffer ? <PumpOfferBar /> : <LegacyDownloadBar />;
+}
+
+function PumpOfferBar() {
   /* AppsFlyer download-link generation preserved for future use.
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
   const [link, setLink] = useState(FALLBACK);

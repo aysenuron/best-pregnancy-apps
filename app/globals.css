@@ -125,6 +125,14 @@
 }
 
 /* Match the reserved page space to the sticky offer, including iOS safe areas. */
+.download-bar {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.download-bar-spacer {
+  height: calc(60px + env(safe-area-inset-bottom, 0px));
+}
+
 .pump-bar {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
