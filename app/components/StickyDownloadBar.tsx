@@ -1,7 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+// import { useEffect, useState } from "react";
+
+const FREE_PUMP_URL =
+  "https://cubtale.covermypregnancy.com/get-started?utm_source=cubtale&utm_medium=web&utm_campaign=bestpregnancyapp";
 
 export function StickyDownloadBar() {
+  /* AppsFlyer download-link generation preserved for future use.
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
   const [link, setLink] = useState(FALLBACK);
 
@@ -55,18 +61,59 @@ export function StickyDownloadBar() {
       }
     });
   }, []);
+  */
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-purple-500 shadow-lg">
-      <a
-        href={link}
-        id="cubtale-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center w-full py-4 text-white font-semibold text-lg hover:bg-purple-600 transition-colors"
+    <>
+      {/* Reserve space so the fixed bar never covers the footer. */}
+      <div className="pump-bar-spacer" aria-hidden="true" />
+      <aside
+        aria-label="Free breast pump offer"
+        className="pump-bar fixed inset-x-0 bottom-0 z-50 border-t border-purple-200/70 bg-gradient-to-r from-purple-50 via-white to-purple-50 shadow-[0_-8px_32px_rgba(88,28,135,0.08)]"
       >
-        🤍 Download Cubtale
-      </a>
-    </div>
+        <div className="pump-bar-content mx-auto flex min-h-22 max-w-5xl items-center gap-3 px-4 py-3 sm:min-h-27 sm:gap-5 sm:px-6">
+          <Image
+            src="/breast-pump.webp"
+            alt=""
+            width={88}
+            height={88}
+            sizes="88px"
+            className="hidden h-22 w-22 shrink-0 object-contain sm:block"
+          />
+          <div className="hidden flex-1 md:block">
+            <p className="mb-1 text-xs font-semibold tracking-widest text-purple-700 uppercase">
+              For your next chapter
+            </p>
+            <p className="text-lg font-semibold leading-snug text-blue-950">
+              A little support for your feeding journey.
+            </p>
+          </div>
+          <a
+            href={FREE_PUMP_URL}
+            id="free-pump-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pump-bar-cta group flex min-h-12 flex-1 items-center justify-center gap-2 rounded-full bg-purple-600 px-4 py-3 text-center text-sm font-semibold leading-snug text-white shadow-[0_4px_14px_rgba(147,51,234,0.24)] transition-colors hover:bg-purple-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-700 sm:ml-auto sm:flex-none sm:px-6 sm:text-base"
+          >
+            <span className="pump-bar-mobile-icon hidden" aria-hidden="true">
+              <Image
+                src="/breast-pump.webp"
+                alt=""
+                width={64}
+                height={64}
+                sizes="64px"
+                className="h-16 w-16 object-contain"
+              />
+            </span>
+            <span className="pump-bar-cta-label">Get Your Free Pump Today</span>
+            <ArrowRight
+              aria-hidden="true"
+              size={18}
+              className="shrink-0 motion-safe:transition-transform motion-safe:group-hover:translate-x-1"
+            />
+          </a>
+        </div>
+      </aside>
+    </>
   );
 }

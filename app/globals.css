@@ -123,3 +123,70 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Match the reserved page space to the sticky offer, including iOS safe areas. */
+.pump-bar {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pump-bar-spacer {
+  height: calc(112px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (max-width: 639px) {
+  .pump-bar {
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .pump-bar-content {
+    justify-content: center;
+    padding: 12px 16px;
+  }
+
+  .pump-bar-cta {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    flex: none;
+    gap: clamp(4px, calc(5vw - 12px), 8px);
+    width: 100%;
+    max-width: none;
+    min-height: 88px;
+    padding: 10px clamp(8px, calc(5vw - 8px), 18px);
+    border: 2px solid var(--color-purple-600);
+    border-radius: 9999px;
+    background: #fff;
+    color: var(--color-purple-600);
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    line-height: 1.4;
+    box-shadow: 0 6px 22px rgb(147 51 234 / 16%);
+  }
+
+  .pump-bar-cta:hover {
+    border-color: var(--color-purple-700);
+    background: #fff;
+    color: var(--color-purple-700);
+  }
+
+  .pump-bar-mobile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pump-bar-cta-label {
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .pump-bar-cta > svg {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .pump-bar-spacer {
+    height: calc(113px + env(safe-area-inset-bottom, 0px));
+  }
+}
