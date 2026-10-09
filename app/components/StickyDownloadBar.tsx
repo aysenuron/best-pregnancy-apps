@@ -6,7 +6,7 @@ import { LegacyDownloadBar } from "./LegacyDownloadBar";
 // import { useEffect, useState } from "react";
 
 const FREE_PUMP_URL =
-  "https://cubtale.covermypregnancy.com/get-started?utm_source=cubtale&utm_medium=web&utm_campaign=bestpregnancyapp";
+  "https://a.cubtale.link/free_pump_bestpregnancy";
 
 export function StickyDownloadBar() {
   const [showPumpOffer, setShowPumpOffer] = useState<boolean | null>(null);
