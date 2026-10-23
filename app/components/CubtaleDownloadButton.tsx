@@ -61,10 +61,15 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
   }, []);
 
   return (
-    <Button asChild>
-      <a id={id} href={link} target="_blank" rel="noopener noreferrer">
-        Download
-      </a>
-    </Button>
+    <>
+      <Button asChild>
+        <a id={id} href={link} target="_blank" rel="sponsored noopener noreferrer">
+          Download
+        </a>
+      </Button>
+      <p className="mt-2 text-xs text-gray-600">
+        Affiliate link — we may earn a commission.
+      </p>
+    </>
   );
 }

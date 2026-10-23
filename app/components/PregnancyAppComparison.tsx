@@ -13,7 +13,7 @@ const APP_ORDER = [
 ] as const;
 
 const APP_META: Record<string, { rating: string; adoptionRate?: number; screenshot: string; link: string; btnId: string }> = {
-  "Cubtale Pregnancy": { rating: "10/10", adoptionRate: 90, screenshot: "/screenshots/cubtale.jpg",          link: "#",                                         btnId: "cubtale-btn" },
+  "Cubtale Pregnancy": { rating: "10/10", adoptionRate: 90, screenshot: "/screenshots/cubtale.jpg",          link: "https://app.cubtale.com/VTch/pregnancy",       btnId: "cubtale-btn" },
   BabyCenter:      { rating: "8/10",  adoptionRate: 67, screenshot: "/screenshots/babycenter.jpg",       link: "https://www.babycenter.com/",                btnId: "babycenter-btn" },
   Flo:             { rating: "7/10",  adoptionRate: 63, screenshot: "/screenshots/flo.png",              link: "https://flo.health/",                        btnId: "flo-btn" },
   Ovia:            { rating: "6/10",                    screenshot: "/screenshots/ovia.jpg",             link: "https://www.oviahealth.com/",                btnId: "ovia-btn" },
@@ -58,6 +58,7 @@ export function PregnancyAppComparison() {
                 strengthsLabel={t.strengths}
                 limitationsLabel={t.limitations}
                 downloadLabel={t.download}
+                websiteLabel={t.website}
               />
             );
           })}

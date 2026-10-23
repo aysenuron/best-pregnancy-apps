@@ -77,11 +77,14 @@ export function LegacyDownloadBar({ track = true }: { track?: boolean }) {
           href={link}
           id="sticky-cubtale-download-btn"
           target="_blank"
-          rel="noopener noreferrer"
-          className="flex w-full items-center justify-center py-4 text-lg font-semibold text-white transition-colors hover:bg-purple-600 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
+          rel="sponsored noopener noreferrer"
+          className="flex w-full items-center justify-center py-3 text-lg font-semibold text-white transition-colors hover:bg-purple-600 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white"
         >
           🤍 Download Cubtale
         </a>
+        <p className="px-4 pb-2 text-center text-xs text-white">
+          Affiliate link — we may earn a commission.
+        </p>
       </aside>
     </>
   );

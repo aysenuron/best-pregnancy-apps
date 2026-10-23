@@ -24,6 +24,7 @@ export function HeroSection() {
         <div className="flex flex-col gap-4 justify-center pr-4 lg:pr-0">
           <h1 className="lg:text-6xl text-5xl text-blue-950">{t.hero.title}</h1>
           <p className="text-sm text-gray-500">{t.hero.lastUpdated}</p>
+          <p className="text-sm text-gray-600">{t.hero.author}</p>
           <p className="text-md text-gray-700">{t.hero.description}</p>
         </div>
       </section>

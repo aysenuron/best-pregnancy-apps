@@ -24,6 +24,7 @@ type AppCardProps = {
   strengthsLabel?: string;
   limitationsLabel?: string;
   downloadLabel?: string;
+  websiteLabel?: string;
 };
 
 export function AppCard({
@@ -45,6 +46,7 @@ export function AppCard({
   strengthsLabel = "Strengths",
   limitationsLabel = "Limitations",
   downloadLabel = "Download",
+  websiteLabel = "Visit website",
 }: AppCardProps) {
   const [finalLink, setFinalLink] = useState(link);
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
@@ -122,19 +124,23 @@ export function AppCard({
               </div>
             )}
 
-            {name === "Cubtale Pregnancy" && (
-              <Button asChild>
-                <a
-                  id={btnId}
-                  href={finalLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {downloadLabel}
-                </a>
-              </Button>
-            )}
+            <Button asChild className="ml-auto">
+              <a
+                id={btnId}
+                href={finalLink}
+                target="_blank"
+                rel={name === "Cubtale Pregnancy" ? "sponsored noopener noreferrer" : "noopener noreferrer"}
+                aria-label={`${name}: ${name === "Cubtale Pregnancy" ? downloadLabel : websiteLabel}`}
+              >
+                {name === "Cubtale Pregnancy" ? downloadLabel : websiteLabel}
+              </a>
+            </Button>
           </div>
+          {name === "Cubtale Pregnancy" && (
+            <p className="text-xs font-normal text-gray-600">
+              Affiliate link — we may earn a commission.
+            </p>
+          )}
         </CardTitle>
       </CardHeader>
 

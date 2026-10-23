@@ -1,0 +1,24 @@
+# Best Pregnancy Apps
+
+> A comparison of pregnancy tracking apps, with feature comparisons, evaluation
+> methodology, and frequently asked questions. Written by Courtney Miller.
+
+## Agent access
+
+All AI agents, assistants, and crawlers are welcome. All providers are allowed to
+access, crawl, index, summarize, and reference this site's public content.
+
+## Content
+
+- [Pregnancy app comparison](https://bestpregnancy.app/#features): Cubtale Pregnancy, BabyCenter, Flo, Ovia, Pregnancy+, and What to Expect.
+- [Evaluation methodology](https://bestpregnancy.app/#methodology): How the apps are evaluated.
+- [Feature comparison chart](https://bestpregnancy.app/#chart): Side-by-side app features.
+- [Frequently asked questions](https://bestpregnancy.app/#faq): Pregnancy app questions and answers.
+
+## Site information
+
+- [Agent policy](https://bestpregnancy.app/AGENTS.md)
+- [Crawler rules](https://bestpregnancy.app/robots.txt)
+- [Sitemap](https://bestpregnancy.app/sitemap.xml)
+
+Cubtale download links are affiliate links; the site may earn a commission.

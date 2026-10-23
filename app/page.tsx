@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: "Expert comparison of top pregnancy apps",
     type: "article",
     publishedTime: "2026-01-05",
-    authors: ["Selin Tamer"],
+    authors: ["Courtney Miller"],
   },
 };
 
@@ -32,8 +32,7 @@ export default function Home() {
     headline: "Best Pregnancy Tracker Apps 2026",
     author: {
       "@type": "Person",
-      name: "Selin Tamer",
-      jobTitle: "CEO & Writer",
+      name: "Courtney Miller",
     },
     datePublished: "2026-01-05",
     dateModified: "2026-01-06",
@@ -74,7 +73,7 @@ export default function Home() {
     uploadDate: "2026-01-06",
     author: {
       "@type": "Person",
-      name: "Selin Tamer",
+      name: "Courtney Miller",
     },
   };
 

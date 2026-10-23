@@ -10,6 +10,7 @@ export const translations = {
     hero: {
       title: "The Best Pregnancy Apps in 2026",
       lastUpdated: "Last updated: March 23, 2026",
+      author: "Written by Courtney Miller",
       description:
         "We tested 15 pregnancy apps and selected the top 5 based on accuracy, privacy protection, feature completeness, and user experience. Our evaluation criteria included medical accuracy verification, data privacy policies, and real user feedback from 500+ reviews.",
       imgAlt: "Pregnant woman looking at her smart phone",
@@ -228,6 +229,7 @@ export const translations = {
       strengths: "Strengths",
       limitations: "Limitations",
       download: "Download",
+      website: "Visit website",
       apps: {
         "Cubtale Pregnancy": {
           features: [
@@ -553,6 +555,7 @@ export const translations = {
     hero: {
       title: "Las Mejores Apps de Embarazo en 2026",
       lastUpdated: "Última actualización: 23 de marzo de 2026",
+      author: "Escrito por Courtney Miller",
       description:
         "Probamos 15 apps de embarazo y seleccionamos las 5 mejores basándonos en precisión, protección de privacidad, completitud de funciones y experiencia de usuario. Nuestros criterios de evaluación incluyen verificación de precisión médica, políticas de privacidad de datos y opiniones reales de más de 500 usuarias.",
       imgAlt: "Mujer embarazada mirando su teléfono inteligente",
@@ -771,6 +774,7 @@ export const translations = {
       strengths: "Fortalezas",
       limitations: "Limitaciones",
       download: "Descargar",
+      website: "Visitar sitio web",
       apps: {
         "Cubtale Pregnancy": {
           features: [

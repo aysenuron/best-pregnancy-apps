@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     "pregnancy guide",
     "contraction timer",
   ],
-  authors: [{ name: "Selin Tamer", url: "https://bestpregnancy.app" }],
-  creator: "Selin Tamer",
+  authors: [{ name: "Courtney Miller", url: "https://bestpregnancy.app" }],
+  creator: "Courtney Miller",
   publisher: "Best Pregnancy Apps",
 
   /* Open Graph for social sharing */
