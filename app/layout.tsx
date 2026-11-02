@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import { StickyDownloadBar } from "@/app/components/StickyDownloadBar";
 import { LanguageProvider } from "@/app/context/LanguageContext";
+import { LandingExperimentAnalytics } from "@/app/components/LandingExperimentAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -121,6 +122,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <StickyDownloadBar />
+          <LandingExperimentAnalytics enabled={process.env.LANDING_AB_TEST_ENABLED === "true"} />
         </LanguageProvider>
       </body>
     </html>

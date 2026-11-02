@@ -17,7 +17,7 @@ interface CategoryData {
   features: FeatureData[];
 }
 
-const FeatureComparisonChart: React.FC = () => {
+const FeatureComparisonChart: React.FC<{ editorial?: boolean }> = ({ editorial = false }) => {
   const { language } = useLanguage();
   const tChart = translations[language].featureChart;
 
@@ -460,9 +460,9 @@ const FeatureComparisonChart: React.FC = () => {
 
   const ComparisonChart = ({ data }: { data: CategoryData }) => {
     return (
-      <div className="bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden">
+      <div className={editorial ? "bg-white border border-gray-200 overflow-hidden" : "bg-white rounded-b-2xl shadow-lg border border-gray-200 overflow-hidden"}>
         {/* Header */}
-        <div className="bg-linear-to-r from-indigo-100 to-purple-100 px-6 py-5">
+        <div className={editorial ? "bg-[#f8f6f9] px-6 py-5" : "bg-linear-to-r from-indigo-100 to-purple-100 px-6 py-5"}>
           <h3 className="text-xl font-semibold text-blue-950">
             {tChart.categoryLabels[data.category as keyof typeof tChart.categoryLabels] ?? data.category}
           </h3>
@@ -562,11 +562,11 @@ const FeatureComparisonChart: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-linear-to-b from-pink-50 via-blue-50 to-indigo-50 p-8">
+    <div className={editorial ? "mx-auto w-[calc(100%-40px)] max-w-[1160px] bg-white" : "min-h-screen pt-20 bg-linear-to-b from-pink-50 via-blue-50 to-indigo-50 p-8"}>
       <div className="container mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h2 className="text-4xl mb-4 text-blue-950">
+          <h2 className={editorial ? "text-4xl mb-4 text-[#111]" : "text-4xl mb-4 text-blue-950"}>
             {tChart.title}
           </h2>
           <p className="text-lg text-gray-600">
@@ -575,14 +575,15 @@ const FeatureComparisonChart: React.FC = () => {
         </div>
 
         {/* Category Selector */}
-        <div className="bg-white rounded-t-2xl py-4 lg:py-6 px-6 inline-flex justify-center flex-wrap gap-2">
+        <div className={editorial ? "bg-white py-4 flex flex-wrap gap-2" : "bg-white rounded-t-2xl py-4 lg:py-6 px-6 inline-flex justify-center flex-wrap gap-2"}>
           {categories.map((cat) => (
             <button
               key={cat.category}
               onClick={() => setSelectedCategory(cat.category)}
+              aria-pressed={selectedCategory === cat.category}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:cursor-pointer ${
                 selectedCategory === cat.category
-                  ? "bg-linear-to-r from-indigo-100 to-purple-100 text-blue-950 shadow-md scale-105"
+                  ? (editorial ? "bg-[#20124d] text-white" : "bg-linear-to-r from-indigo-100 to-purple-100 text-blue-950 shadow-md scale-105")
                   : "bg-transparent text-gray-700 hover:bg-gray-100"
               }`}
             >

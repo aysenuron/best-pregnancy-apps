@@ -100,7 +100,7 @@ export default function Home() {
 
       <Nav />
 
-      <main>
+      <main data-landing-variant="original">
         <HeroSection />
 
         <section className="pointer-events-none relative -z-10 pt-4 2xl:pt-0 2xl:-mt-20">

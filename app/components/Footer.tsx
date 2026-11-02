@@ -56,6 +56,8 @@ export function Footer() {
           </div>
         </div>
 
+        <p className="mt-8 text-sm leading-relaxed text-gray-600">{t.affiliateNote}</p>
+
         {/* Bottom Bar */}
         <div className="mt-10 border-t pt-6 text-sm text-gray-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {t.copyright}</p>

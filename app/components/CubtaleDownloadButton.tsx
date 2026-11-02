@@ -1,8 +1,13 @@
 "use client";
+import { getAppsFlyerAdParameters, getAppsFlyerDeepLinkGroupParameter } from "@/app/lib/appsflyer-ad";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
-export function CubtaleDownloadButton({ id }: { id: string }) {
+export function CubtaleDownloadButton({ id, label = "Download", onLinkChange }: {
+  id: string;
+  label?: string;
+  onLinkChange?: (link: string) => void;
+}) {
   const FALLBACK = "https://app.cubtale.com/VTch/pregnancy";
   const [link, setLink] = useState(FALLBACK);
 
@@ -10,10 +15,15 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
     let attempts = 0;
     const MAX_ATTEMPTS = 40;
 
+    function updateLink(url: string) {
+      setLink(url);
+      onLinkChange?.(url);
+    }
+
     function waitForAF(cb: () => void) {
       if ((window as any).AF_SMART_SCRIPT) return cb();
       if (++attempts >= MAX_ATTEMPTS) {
-        setLink(FALLBACK);
+        updateLink(FALLBACK);
         return;
       }
       setTimeout(() => waitForAF(cb), 50);
@@ -26,7 +36,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
           mediaSource: { keys: ["utm_source", "cub_src"], defaultValue: "bestpregnancyapp_web" },
           campaign: { keys: ["utm_campaign", "cub_cmp"], defaultValue: "Pregnancy" },
           channel: { keys: ["utm_channel", "cub_chn"], defaultValue: "bestpregnancyapp_web_channel" },
-          ad: { keys: ["utm_ad", "cub_ad"], defaultValue: "bestpregnancyapp_web_ad" },
+          ad: getAppsFlyerAdParameters(),
           adSet: { keys: ["utm_adset", "cub_adset"], defaultValue: "bestpregnancyapp_web_adset" },
           afSub1: { keys: ["googleClickIdKey"], defaultValue: "gclid" },
           afSub2: { keys: ["fbclid"] },
@@ -36,6 +46,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
           deepLinkValue: { keys: ["utm_dp", "cub_dp"], defaultValue: "pregnancy_web" },
           webReferrer: "true",
           afCustom: [
+            getAppsFlyerDeepLinkGroupParameter(),
             { paramKey: "af_ss_ui", defaultValue: "true" },
             { paramKey: "af_c_id", keys: ["utm_id"] },
             { paramKey: "af_android_store_csl", defaultValue: "pregnancy" },
@@ -46,7 +57,7 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
       if (result && result.clickURL) {
         console.log("Smart Script URL Generated:", result.clickURL);
 
-        setLink(result?.clickURL || FALLBACK);
+        updateLink(result.clickURL);
 
         // Optional: Fire impression
         setTimeout(() => {
@@ -58,18 +69,15 @@ export function CubtaleDownloadButton({ id }: { id: string }) {
       
     });
  
-  }, []);
+  }, [onLinkChange]);
 
   return (
     <>
       <Button asChild>
         <a id={id} href={link} target="_blank" rel="sponsored noopener noreferrer">
-          Download
+          {label}
         </a>
       </Button>
-      <p className="mt-2 text-xs text-gray-600">
-        Affiliate link — we may earn a commission.
-      </p>
     </>
   );
 }

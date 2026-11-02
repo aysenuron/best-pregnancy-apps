@@ -1,5 +1,43 @@
 export const translations = {
   en: {
+    editorialLanding: {
+      "title": "Best Pregnancy Apps in 2026",
+      "lastUpdated": "Last updated: November 1, 2026",
+      "updatedNote": "This comparison is regularly updated with new features and apps. Last updated: November 1, 2026.",
+      "downloadCubtale": "Download Cubtale",
+      "babyTrackingNote": "We also love that there’s no need to switch apps when baby arrives! Cubtale is great for baby tracking too, so you can keep using the same app to log feeds, diaper changes and sleep after your baby is born.",
+      "reviews": {
+        "Cubtale Pregnancy": {
+          "paragraph": "Cubtale Pregnancy is our absolute favorite! We love how it brings the little moments and the practical details of pregnancy together in one beautifully designed app. From saving bump photos to keeping track of prenatal vitamins, appointments and baby’s weekly development, it feels like everything has a place. What really won us over is how much you can keep organized: doctor visit notes, blood pressure readings, kicks and contractions, all alongside your everyday memories. Add Apple Watch, Siri and health-app integrations, and this is the one we’d reach for throughout pregnancy.",
+          "highlights": [
+            "Keep appointments, doctor visit notes and prenatal vitamin reminders together.",
+            "Track kicks, contractions, weight and blood pressure.",
+            "Connect with Apple Health, Fitbit, Apple Watch and Siri.",
+            "Share tracking with family and continue in baby mode after birth."
+          ]
+        },
+        "BabyCenter": {
+          "paragraph": "We love BabyCenter’s active community and its huge library of pregnancy articles. The birth clubs are a lovely way to connect with parents who are due around the same time. For keeping detailed health records and sharing day-to-day tracking with family, though, we’d pick Cubtale Pregnancy.",
+          "highlights": []
+        },
+        "Flo": {
+          "paragraph": "We like Flo’s clean interface and the natural move from cycle tracking into pregnancy. Its mood and sleep tracking are especially appealing if you already use Flo to understand your patterns. Cubtale Pregnancy gets our vote for a more complete pregnancy toolkit, with kick counting, contraction timing and doctor visit logs in one place.",
+          "highlights": []
+        },
+        "Ovia": {
+          "paragraph": "We like Ovia’s research-backed approach and its connections with healthcare providers and employer health programs. It’s an appealing option if you want pregnancy information connected to those benefits. For the hands-on tracking we look for day to day, we’d choose Cubtale Pregnancy for its detailed health logs and device integrations.",
+          "highlights": []
+        },
+        "Pregnancy+": {
+          "paragraph": "Pregnancy+ really caught our eye with its beautiful 3D baby visualizations and week-by-week development updates. We love that it makes following baby’s growth feel so visual. Cubtale Pregnancy comes out ahead for us because it pairs pregnancy tracking with family sharing, health integrations and a baby mode you can keep using after birth.",
+          "highlights": []
+        },
+        "What to Expect": {
+          "paragraph": "We love the familiar, trusted feel of What to Expect, especially its expert-reviewed articles and due-date communities. There’s a lot to enjoy if you want to read, learn and connect with other parents. For a fuller picture of everyday health, we’d choose Cubtale Pregnancy for its blood pressure tracking, doctor visit records and wearable integrations.",
+          "highlights": []
+        }
+      }
+    },
     nav: {
       features: "Features",
       methodology: "Methodology",
@@ -529,6 +567,7 @@ export const translations = {
       },
     },
     footer: {
+      affiliateNote: "Affiliate links. We may earn a commission.",
       description:
         "Independent reviews and comparisons of pregnancy and baby tracking apps. Our goal is to help parents make informed, confident decisions.",
       explore: "Explore",
@@ -547,6 +586,44 @@ export const translations = {
   },
 
   es: {
+    editorialLanding: {
+      "title": "Mejores Apps de Embarazo en 2026",
+      "lastUpdated": "Última actualización: 1 de noviembre de 2026",
+      "updatedNote": "Esta comparativa se actualiza regularmente con nuevas funciones y apps. Última actualización: 1 de noviembre de 2026.",
+      "downloadCubtale": "Descargar Cubtale",
+      "babyTrackingNote": "¡También nos encanta que no hace falta cambiar de app cuando nace el bebé! Cubtale es excelente para el seguimiento del bebé, así que puedes seguir usando la misma app para registrar tomas, cambios de pañal y sueño después del nacimiento.",
+      "reviews": {
+        "Cubtale Pregnancy": {
+          "paragraph": "¡Cubtale Pregnancy es nuestra favorita! Nos encanta cómo reúne los pequeños momentos y los detalles prácticos del embarazo en una app con un diseño precioso. Desde guardar fotos de la barriga hasta llevar un registro de vitaminas prenatales, citas y el desarrollo semanal del bebé, sentimos que todo tiene su lugar. Lo que más nos conquistó es todo lo que permite organizar: notas de visitas médicas, lecturas de presión arterial, patadas y contracciones, junto con los recuerdos de cada día. Si sumamos las integraciones con Apple Watch, Siri y apps de salud, es la que elegiríamos durante todo el embarazo.",
+          "highlights": [
+            "Reúne citas, notas de visitas médicas y recordatorios de vitaminas prenatales.",
+            "Registra patadas, contracciones, peso y presión arterial.",
+            "Conecta con Apple Health, Fitbit, Apple Watch y Siri.",
+            "Comparte el seguimiento con la familia y continúa en modo bebé después del parto."
+          ]
+        },
+        "BabyCenter": {
+          "paragraph": "Nos encanta la comunidad activa de BabyCenter y su enorme biblioteca de artículos sobre el embarazo. Los grupos por fecha de parto son una forma bonita de conectar con familias que esperan a su bebé en las mismas fechas. Pero para llevar registros de salud detallados y compartir el seguimiento diario con la familia, elegiríamos Cubtale Pregnancy.",
+          "highlights": []
+        },
+        "Flo": {
+          "paragraph": "Nos gusta la interfaz limpia de Flo y la transición natural del seguimiento del ciclo al embarazo. Sus registros de ánimo y sueño resultan especialmente atractivos si ya usas Flo para conocer tus patrones. Para contar con herramientas de embarazo más completas, nos quedamos con Cubtale Pregnancy, que reúne contador de patadas, cronómetro de contracciones y registros de visitas médicas.",
+          "highlights": []
+        },
+        "Ovia": {
+          "paragraph": "Nos gusta el enfoque de Ovia basado en investigación y su conexión con profesionales de la salud y programas de bienestar de empresas. Es una opción atractiva si buscas información sobre el embarazo vinculada a esos beneficios. Para el seguimiento práctico que buscamos cada día, elegiríamos Cubtale Pregnancy por sus registros de salud detallados e integraciones con dispositivos.",
+          "highlights": []
+        },
+        "Pregnancy+": {
+          "paragraph": "Pregnancy+ nos llamó la atención por sus preciosas visualizaciones 3D del bebé y sus actualizaciones de desarrollo semana a semana. Nos encanta lo visual que hace seguir el crecimiento del bebé. Para nosotros, Cubtale Pregnancy lleva la ventaja porque combina el seguimiento del embarazo con acceso familiar, integraciones de salud y un modo bebé que puedes seguir usando después del parto.",
+          "highlights": []
+        },
+        "What to Expect": {
+          "paragraph": "Nos encanta la familiaridad y confianza que transmite What to Expect, especialmente sus artículos revisados por expertos y sus comunidades por fecha de parto. Tiene mucho que ofrecer si quieres leer, aprender y conectar con otras familias. Para tener una visión más completa de la salud diaria, elegiríamos Cubtale Pregnancy por su seguimiento de presión arterial, registros de visitas médicas e integraciones con dispositivos.",
+          "highlights": []
+        }
+      }
+    },
     nav: {
       features: "Funciones",
       methodology: "Metodología",
@@ -1076,6 +1153,7 @@ export const translations = {
       },
     },
     footer: {
+      affiliateNote: "Enlaces de afiliados. Podemos recibir una comisión.",
       description:
         "Reseñas y comparativas independientes de apps de seguimiento de embarazo y bebé. Nuestro objetivo es ayudar a los padres a tomar decisiones informadas y seguras.",
       explore: "Explorar",

@@ -1,4 +1,5 @@
 "use client";
+import { getAppsFlyerAdParameters, getAppsFlyerDeepLinkGroupParameter } from "@/app/lib/appsflyer-ad";
 
 import { useEffect, useState } from "react";
 
@@ -35,7 +36,7 @@ export function LegacyDownloadBar({ track = true }: { track?: boolean }) {
             mediaSource: { keys: ["utm_source", "cub_src"], defaultValue: "bestpregnancyapp_web" },
             campaign: { keys: ["utm_campaign", "cub_cmp"], defaultValue: "Pregnancy" },
             channel: { keys: ["utm_channel", "cub_chn"], defaultValue: "bestpregnancyapp_web_channel" },
-            ad: { keys: ["utm_ad", "cub_ad"], defaultValue: "bestpregnancyapp_web_ad" },
+            ad: getAppsFlyerAdParameters(),
             adSet: { keys: ["utm_adset", "cub_adset"], defaultValue: "bestpregnancyapp_web_adset" },
             afSub1: { keys: ["googleClickIdKey"], defaultValue: "gclid" },
             afSub2: { keys: ["fbclid"] },
@@ -45,6 +46,7 @@ export function LegacyDownloadBar({ track = true }: { track?: boolean }) {
             deepLinkValue: { keys: ["utm_dp", "cub_dp"], defaultValue: "pregnancy_web" },
             webReferrer: "true",
             afCustom: [
+              getAppsFlyerDeepLinkGroupParameter(),
               { paramKey: "af_ss_ui", defaultValue: "true" },
               { paramKey: "af_c_id", keys: ["utm_id"] },
               { paramKey: "af_android_store_csl", defaultValue: "pregnancy" },
@@ -82,9 +84,6 @@ export function LegacyDownloadBar({ track = true }: { track?: boolean }) {
         >
           🤍 Download Cubtale
         </a>
-        <p className="px-4 pb-2 text-center text-xs text-white">
-          Affiliate link — we may earn a commission.
-        </p>
       </aside>
     </>
   );
