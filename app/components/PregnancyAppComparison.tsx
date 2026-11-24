@@ -15,6 +15,7 @@ export function PregnancyAppComparison() {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-4xl text-blue-950">{t.title}</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">{t.subtitle}</p>
+          <p className="mt-2 text-sm text-gray-600">{t.appAvailability}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">

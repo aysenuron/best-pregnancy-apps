@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/lib/translations";
 import { CubtaleDownloadButton } from "@/app/components/CubtaleDownloadButton";
+import { SITE_AUTHOR_PATH } from "@/app/lib/site-author";
 
 export function HeroSection() {
   const { language } = useLanguage();
@@ -28,7 +30,9 @@ export function HeroSection() {
           </h1>
           <div className="col-span-2 flex flex-wrap gap-x-3 gap-y-1 max-lg:order-3 lg:contents">
             <p className="text-xs text-gray-500 lg:text-sm">{t.hero.lastUpdated}</p>
-            <p className="text-xs text-gray-600 lg:text-sm">{t.hero.author}</p>
+            <p className="text-xs text-gray-600 lg:text-sm">
+              <Link href={SITE_AUTHOR_PATH} className="underline underline-offset-2">{t.hero.author}</Link>
+            </p>
           </div>
           <p className="col-span-2 text-sm text-gray-700 max-lg:order-4 lg:hidden">
             {t.hero.summary}

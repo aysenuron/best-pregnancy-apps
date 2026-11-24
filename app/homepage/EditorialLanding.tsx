@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 import { translations } from "@/app/lib/translations";
 import { APP_ORDER, APP_META } from "@/app/lib/pregnancy-app-meta";
+import { SITE_AUTHOR_PATH } from "@/app/lib/site-author";
 import { LanguageSwitcher } from "@/app/components/LanguageSwitcher";
 import { CubtaleDownloadButton } from "@/app/components/CubtaleDownloadButton";
 import FeatureComparisonChart from "@/app/components/FeatureComparisonWithData";
@@ -40,8 +42,12 @@ export function EditorialLanding() {
 
       <main data-landing-variant="redesign">
         <section className={`${styles.container} ${styles.intro}`}>
-          <div className={styles.byline}><span>{editorial.lastUpdated}</span><span>{t.hero.author}</span></div>
+          <div className={styles.byline}>
+            <span>{editorial.lastUpdated}</span>
+            <Link href={SITE_AUTHOR_PATH} className="underline underline-offset-2">{t.hero.author}</Link>
+          </div>
           <p>{t.hero.description}</p>
+          <p className="mt-3! text-sm">{t.comparison.appAvailability}</p>
 
         </section>
 

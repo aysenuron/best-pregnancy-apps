@@ -1,12 +1,30 @@
 import { faqSchema } from "@/app/lib/faq-schema";
 import type { LandingVariant } from "@/app/lib/landing-experiment";
 import { APP_META, APP_ORDER } from "@/app/lib/pregnancy-app-meta";
-import { SITE_AUTHOR } from "@/app/lib/site-author";
+import { SITE_AUTHOR_SCHEMA } from "@/app/lib/site-author";
 import { translations } from "@/app/lib/translations";
 
 const SITE_URL = "https://bestpregnancy.app";
 const SCHEMA_CONTEXT = "https://schema.org";
-const AUTHOR = { "@type": "Person", name: SITE_AUTHOR };
+const organization = {
+  "@context": SCHEMA_CONTEXT,
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Best Pregnancy Apps",
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/best-pregnancy-logo.svg`,
+};
+
+const publisher = { "@id": organization["@id"] };
+
+const website = {
+  "@context": SCHEMA_CONTEXT,
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: organization.name,
+  url: organization.url,
+  publisher,
+};
 
 const chartImage = {
   "@context": SCHEMA_CONTEXT,
@@ -17,7 +35,7 @@ const chartImage = {
   width: 1500,
   height: 785,
   uploadDate: "2026-01-06",
-  author: AUTHOR,
+  author: SITE_AUTHOR_SCHEMA,
 };
 
 const heroImage = {
@@ -46,9 +64,11 @@ const itemList = {
         name,
         url: link,
         applicationCategory: "HealthApplication",
+        operatingSystem: "iOS, Android",
+        offers: { "@type": "Offer", price: 0 },
         review: {
           "@type": "Review",
-          author: AUTHOR,
+          author: SITE_AUTHOR_SCHEMA,
           reviewRating: { "@type": "Rating", ratingValue, bestRating, worstRating: 1 },
         },
       },
@@ -63,17 +83,19 @@ export function LandingStructuredData({ variant }: { variant: LandingVariant }) 
     "@context": SCHEMA_CONTEXT,
     "@type": "Article",
     headline: redesign ? translations.en.editorialLanding.title : translations.en.hero.title,
-    author: AUTHOR,
+    author: SITE_AUTHOR_SCHEMA,
+    publisher,
+    isPartOf: { "@id": website["@id"] },
     datePublished: "2026-01-05",
     dateModified: redesign ? "2026-11-01" : "2026-03-23",
-    description: "Comprehensive comparison of the top pregnancy tracking apps",
+    description: "Comprehensive comparison of the top 6 pregnancy tracking apps",
     articleBody: translations.en.hero.description,
     image: image.contentUrl,
   };
 
   return (
     <>
-      {[article, itemList, image, faqSchema].map((block) => (
+      {[organization, website, article, itemList, image, faqSchema].map((block) => (
         <script
           key={block["@type"]}
           type="application/ld+json"

@@ -5,7 +5,7 @@ import Script from "next/script";
 import { StickyDownloadBar } from "@/app/components/StickyDownloadBar";
 import { LanguageProvider } from "@/app/context/LanguageContext";
 import { LandingExperimentAnalytics } from "@/app/components/LandingExperimentAnalytics";
-import { SITE_AUTHOR } from "@/app/lib/site-author";
+import { SITE_AUTHOR, SITE_AUTHOR_URL } from "@/app/lib/site-author";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Best Pregnancy Apps", // For other pages
   },
   description:
-    "Independent comparison of the top 5 pregnancy tracking apps. Expert evaluation based on medical accuracy, privacy, features, and user experience.",
+    "Independent comparison of the top 6 pregnancy tracking apps. Expert evaluation based on medical accuracy, privacy, features, and user experience.",
   keywords: [
     "pregnancy apps",
     "pregnancy tracker",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "pregnancy guide",
     "contraction timer",
   ],
-  authors: [{ name: SITE_AUTHOR, url: "https://bestpregnancy.app" }],
+  authors: [{ name: SITE_AUTHOR, url: SITE_AUTHOR_URL }],
   creator: SITE_AUTHOR,
   publisher: "Best Pregnancy Apps",
 

@@ -49,10 +49,10 @@ export const translations = {
       title: "The Best Pregnancy Apps in 2026",
       lastUpdated: "Last updated: March 23, 2026",
       author: "Written by Courtney Miller",
-      summary: "15 apps tested. Our top 5 compared.",
-      methodologyLabel: "How we selected our top 5",
+      summary: "15 apps tested. Our top 6 compared.",
+      methodologyLabel: "How we selected our top 6",
       description:
-        "We tested 15 pregnancy apps and selected the top 5 based on accuracy, privacy protection, feature completeness, and user experience. Our evaluation criteria included medical accuracy verification, data privacy policies, and real user feedback from 500+ reviews.",
+        "We tested 15 pregnancy apps and selected the top 6 based on accuracy, privacy protection, feature completeness, and user experience. Our evaluation criteria included medical accuracy verification, data privacy policies, and real user feedback from 500+ reviews.",
       imgAlt: "Pregnant woman looking at her smart phone",
     },
     quickAnswer: {
@@ -64,9 +64,9 @@ export const translations = {
     chartSection: {
       title: "Save the chart to your phone!",
       subtitle:
-        "Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026.",
+        "A side-by-side feature chart for our top 6 pregnancy tracker apps in 2026.",
       imgAlt:
-        "Detailed comparison chart showing features, privacy ratings, and pricing of top 5 pregnancy tracker apps in 2026 including Cubtale Pregnancy, Ovia, What to Expect, Flo, and Baby Center",
+        "Chart comparing features across Cubtale Pregnancy, Flo, What to Expect, Pregnancy+, Ovia, and BabyCenter",
     },
     methodology: {
       title: "How We Evaluated These Apps",
@@ -211,6 +211,7 @@ export const translations = {
     },
     comparison: {
       title: "Pregnancy Tracking Apps: A Comparative Analysis",
+      appAvailability: "All six apps are free to download on iOS and Android. Some apps charge for extra features.",
       subtitle:
         "An independent comparison of 6 popular pregnancy tracking applications based on 30 core features. Data collected from App Store listings and feature documentation (March 2026).",
       analysisSummary: "Analysis Summary",
@@ -635,10 +636,10 @@ export const translations = {
       title: "Las Mejores Apps de Embarazo en 2026",
       lastUpdated: "Última actualización: 23 de marzo de 2026",
       author: "Escrito por Courtney Miller",
-      summary: "Probamos 15 apps y comparamos las 5 mejores.",
-      methodologyLabel: "Cómo seleccionamos las 5 mejores",
+      summary: "Probamos 15 apps y comparamos las 6 mejores.",
+      methodologyLabel: "Cómo seleccionamos las 6 mejores",
       description:
-        "Probamos 15 apps de embarazo y seleccionamos las 5 mejores basándonos en precisión, protección de privacidad, completitud de funciones y experiencia de usuario. Nuestros criterios de evaluación incluyen verificación de precisión médica, políticas de privacidad de datos y opiniones reales de más de 500 usuarias.",
+        "Probamos 15 apps de embarazo y seleccionamos las 6 mejores basándonos en precisión, protección de privacidad, completitud de funciones y experiencia de usuario. Nuestros criterios de evaluación incluyen verificación de precisión médica, políticas de privacidad de datos y opiniones reales de más de 500 usuarias.",
       imgAlt: "Mujer embarazada mirando su teléfono inteligente",
     },
     quickAnswer: {
@@ -650,9 +651,9 @@ export const translations = {
     chartSection: {
       title: "¡Guarda la tabla en tu teléfono!",
       subtitle:
-        "Tabla comparativa detallada con funciones, calificaciones de privacidad y precios de las 5 mejores apps de seguimiento de embarazo en 2026.",
+        "Una tabla que compara las funciones de las 6 mejores apps de seguimiento de embarazo en 2026.",
       imgAlt:
-        "Tabla comparativa detallada con funciones, calificaciones de privacidad y precios de las 5 mejores apps de embarazo en 2026 incluyendo Cubtale Pregnancy, Ovia, What to Expect, Flo y Baby Center",
+        "Tabla de funciones de Cubtale Pregnancy, Flo, What to Expect, Pregnancy+, Ovia y BabyCenter",
     },
     methodology: {
       title: "Cómo Evaluamos Estas Apps",
@@ -797,6 +798,7 @@ export const translations = {
     },
     comparison: {
       title: "Apps de Seguimiento de Embarazo: Un Análisis Comparativo",
+      appAvailability: "Las seis apps se pueden descargar gratis en iOS y Android. Algunas cobran por funciones adicionales.",
       subtitle:
         "Una comparativa independiente de 6 populares aplicaciones de seguimiento de embarazo basada en 30 funciones clave. Datos recopilados de las listas en App Store y documentación de funciones (marzo de 2026).",
       analysisSummary: "Resumen del Análisis",
