@@ -58,11 +58,12 @@ before enabling Production; local `next start` cannot validate Vercel's CDN.
 
 ## Measure before launching
 
-The existing Google Analytics tag receives two custom events:
+The existing Google Analytics tag receives three custom events:
 
 | Event | When it fires | Parameters |
 | --- | --- | --- |
 | `landing_experiment_exposure` | Once per full page load after the rendered design matches its valid assignment cookie | `experiment_id`, `variant` |
+| `landing_experiment_cta_impression` | At least 50% of a CTA enters the viewport; once per button ID per page load | `experiment_id`, `variant`, `link_id` |
 | `landing_experiment_cta_click` | A primary outbound Cubtale/download/install or free-pump CTA is clicked | `experiment_id`, `variant`, `link_id` |
 
 The experiment ID is `landing-design-v1`; variant is `original` or `redesign`.
@@ -76,7 +77,10 @@ Tracking requires the server-side enable switch, the visible browser path `/`,
 a valid assignment cookie, and the matching `data-landing-variant` marker on the
 rendered main element. Direct `/homepage` previews, unassigned requests, and stale
 cookie/render mismatches emit no experiment events. Effect remounts do not send a
-second exposure in the same page load. Browser refreshes produce new exposures;
+second exposure in the same page load. Button-impression IDs are also deduplicated
+across effect remounts and DOM replacement. IntersectionObserver measures viewport
+visibility; MutationObserver discovers sticky offers inserted after country lookup.
+The two store badges have separate fixed link IDs for both impressions and clicks. Browser refreshes produce new exposures;
 these are page-load counts, not unique visitor counts.
 
 Before enabling traffic splitting, open GA4 **Admin → Data display → Custom
@@ -84,7 +88,7 @@ definitions → Create custom dimension** and create three **event-scoped**
 definitions with event parameter names `experiment_id`, `variant`, and `link_id`.
 Use readable dimension names such as “Landing experiment”, “Landing variant”,
 and “Landing CTA”. See Google's [custom-dimensions guidance](https://support.google.com/analytics/answer/14240153).
-Confirm both events in [Realtime or DebugView](https://developers.google.com/analytics/devguides/collection/ga4/events)
+Confirm the events in [Realtime or DebugView](https://developers.google.com/analytics/devguides/collection/ga4/events)
 on a Preview deployment. New custom dimensions can take time to appear in reports.
 No GA admin configuration is made automatically by this code.
 
@@ -147,3 +151,9 @@ The active experiment's two GET responses should have the corresponding
 with the query string intact. A normal browser should keep its initial variant
 on refresh. With the test disabled, `/` must always show the original even if a
 redesign cookie remains.
+
+
+For button-level reporting, group by `variant` and `link_id`, and compare
+`landing_experiment_cta_click` with `landing_experiment_cta_impression`. These
+impressions are distinct from page exposures. See the click-by-click instructions
+in [landing-experiment.md](landing-experiment.md), Step 8.

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { EditorialLanding } from "./EditorialLanding";
-import { faqSchema } from "@/app/lib/faq-schema";
+import { LandingStructuredData } from "@/app/components/LandingStructuredData";
 
 export const metadata: Metadata = {
   title: "Best Pregnancy Tracker Apps 2026 - Expert Comparison",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function HomepageVariant() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <LandingStructuredData variant="redesign" />
       <EditorialLanding />
     </>
   );

@@ -5,6 +5,7 @@ import Script from "next/script";
 import { StickyDownloadBar } from "@/app/components/StickyDownloadBar";
 import { LanguageProvider } from "@/app/context/LanguageContext";
 import { LandingExperimentAnalytics } from "@/app/components/LandingExperimentAnalytics";
+import { SITE_AUTHOR } from "@/app/lib/site-author";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +34,8 @@ export const metadata: Metadata = {
     "pregnancy guide",
     "contraction timer",
   ],
-  authors: [{ name: "Courtney Miller", url: "https://bestpregnancy.app" }],
-  creator: "Courtney Miller",
+  authors: [{ name: SITE_AUTHOR, url: "https://bestpregnancy.app" }],
+  creator: SITE_AUTHOR,
   publisher: "Best Pregnancy Apps",
 
   /* Open Graph for social sharing */

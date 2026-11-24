@@ -17,9 +17,23 @@ const source = (await readFile(new URL("../app/components/LandingExperimentAnaly
 const { LandingExperimentAnalytics } = await import(moduleUrl(source));
 
 function browser({ path = "/", cookie = "original", marker = "original", gtag = true } = {}, run) {
-  const previous = { window: globalThis.window, document: globalThis.document, Element: globalThis.Element };
+  const previous = { window: globalThis.window, document: globalThis.document, Element: globalThis.Element, IntersectionObserver: globalThis.IntersectionObserver, MutationObserver: globalThis.MutationObserver };
   const events = [];
   const listeners = new Set();
+  const links = [];
+  const visibilityObservers = [];
+  const mutationObservers = [];
+  globalThis.IntersectionObserver = class {
+    constructor(callback) { this.callback = callback; this.targets = new Set(); visibilityObservers.push(this); }
+    observe(link) { this.targets.add(link); }
+    unobserve(link) { this.targets.delete(link); }
+    disconnect() { this.targets.clear(); this.disconnected = true; }
+  };
+  globalThis.MutationObserver = class {
+    constructor(callback) { this.callback = callback; mutationObservers.push(this); }
+    observe() {}
+    disconnect() { this.disconnected = true; }
+  };
   class FakeElement {
     constructor(link) { this.link = link; }
     closest() { return this.link; }
@@ -32,6 +46,8 @@ function browser({ path = "/", cookie = "original", marker = "original", gtag = 
   globalThis.document = {
     cookie: cookie === null ? "" : `unrelated=1; pregnancy_landing_v1=${cookie}`,
     querySelector: () => ({ getAttribute: () => marker }),
+    querySelectorAll: () => links,
+    body: {},
     addEventListener: (_, listener) => listeners.add(listener),
     removeEventListener: (_, listener) => listeners.delete(listener),
   };
@@ -43,7 +59,18 @@ function browser({ path = "/", cookie = "original", marker = "original", gtag = 
     const target = new FakeElement({ href, id });
     for (const listener of listeners) listener({ target, button: 0, defaultPrevented: false, ...options });
   };
-  try { run({ events, mount, click, listeners }); }
+  const addLink = (id, href = "https://app.cubtale.com/VTch?gclid=private") => {
+    const link = { id, href };
+    links.push(link);
+    for (const observer of mutationObservers) if (!observer.disconnected) observer.callback([]);
+    return link;
+  };
+  const show = (link, ratio = 1) => {
+    for (const observer of visibilityObservers) {
+      if (observer.targets.has(link)) observer.callback([{ target: link, isIntersecting: ratio > 0, intersectionRatio: ratio }]);
+    }
+  };
+  try { run({ events, mount, click, listeners, addLink, show, visibilityObservers, mutationObservers }); }
   finally {
     for (const [key, value] of Object.entries(previous)) {
       if (value === undefined) delete globalThis[key];
@@ -117,5 +144,57 @@ test("events queue in the existing Google dataLayer when gtag has not initialize
     assert.equal(queued[0][1], "landing_experiment_exposure");
     assert.equal(queued[1][1], "landing_experiment_cta_click");
     assert.equal(queued[1][2].link_id, "cubtale-btn");
+  });
+});
+
+
+test("button impressions require half visibility and count once across scrolling and effect remounts", () => {
+  browser({ cookie: "redesign", marker: "redesign" }, ({ events, mount, addLink, show }) => {
+    const button = addLink("cubtale-btn");
+    const cleanup = mount();
+    show(button, 0);
+    show(button, 0.49);
+    assert.equal(events.length, 1);
+    show(button, 0.5);
+    show(button, 1);
+    cleanup();
+    mount();
+    show(button, 1);
+    assert.deepEqual(events.slice(1), [["event", "landing_experiment_cta_impression", {
+      experiment_id: "landing-design-v1", variant: "redesign", link_id: "cubtale-btn",
+    }]]);
+    assert.equal(JSON.stringify(events).includes("private"), false);
+  });
+});
+
+test("late sticky offers and store badges have distinct impression and click IDs", () => {
+  browser({}, ({ events, mount, addLink, show, click, visibilityObservers, mutationObservers }) => {
+    const cleanup = mount();
+    for (const id of ["sticky-cubtale-download-btn", "cubtale-app-store-btn", "cubtale-google-play-btn", "free-pump-btn"]) {
+      const href = id === "free-pump-btn" ? "https://a.cubtale.link/free_pump_bestpregnancy" : "https://app.cubtale.com/VTch";
+      const link = addLink(id, href);
+      show(link);
+      click(href, id);
+      assert.equal(events.at(-2)[1], "landing_experiment_cta_impression");
+      assert.equal(events.at(-2)[2].link_id, id);
+      assert.equal(events.at(-1)[2].link_id, id);
+    }
+    const untracked = addLink("other", "https://www.babycenter.com/");
+    const count = events.length;
+    show(untracked);
+    assert.equal(events.length, count);
+    cleanup();
+    assert.ok(visibilityObservers.every(o => o.disconnected));
+    assert.ok(mutationObservers.every(o => o.disconnected));
+  });
+});
+
+test("button impressions stop when the assignment no longer matches the design", () => {
+  browser({}, ({ events, mount, addLink, show }) => {
+    mount();
+    const button = addLink("cubtale-btn");
+    globalThis.document.cookie = "pregnancy_landing_v1=redesign";
+    show(button);
+    assert.equal(events.length, 1);
   });
 });

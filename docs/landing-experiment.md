@@ -123,7 +123,8 @@ keeps their design for 30 days, so refreshing will not switch designs.
    another. It might randomly choose the same design again.
 4. In Google Analytics, open **Reports → Realtime**. Look for
    `landing_experiment_exposure` in the event list.
-5. Click a Cubtale download link on the website, then look for
+5. Scroll until a download button is visible. Look for
+   `landing_experiment_cta_impression`. Click the button, then look for
    `landing_experiment_cta_click`. Allow a few minutes; ad blockers can prevent events.
 
 **Keep ads pointed at https://bestpregnancy.app/.** Direct `/homepage` visits
@@ -137,15 +138,84 @@ After the custom dimensions become available:
 2. Under **Variables → Dimensions → +**, import **Event name**,
    **Landing experiment**, **Landing variant**, and **Landing button**.
 3. Under **Variables → Metrics → +**, import **Event count**.
-4. In **Tab settings**, put **Landing variant** in **Rows**, **Event name** in
-   **Columns**, and **Event count** in **Values**.
-5. Add a filter: **Landing experiment → exactly matches → landing-design-v1**.
-6. Set the date range to cover your test.
+4. In **Tab settings → Rows**, add **Landing variant**, followed by **Landing button**.
+5. Put **Event name** in **Columns** and **Event count** in **Values**.
+6. Add a filter: **Landing experiment → exactly matches → landing-design-v1**.
+7. Add another filter: **Event name → matches regex**, and paste:
 
-Compare `original` and `redesign`. Divide CTA clicks by exposures for a simple
-click-through comparison. Repeat page views and clicks count again; these are
-not unique-visitor conversion rates or confirmed app installs. Use **Landing
-button** to inspect app-download and free-pump actions separately.
+   ```text
+   ^landing_experiment_cta_(impression|click)$
+   ```
+
+8. Set the date range to cover your test. If you already created the report from
+   an earlier version of this guide, update its Rows and add the event-name filter.
+
+The table now shows each button's impressions and clicks under `original` (A) or
+`redesign` (B). Divide clicks by impressions for that same button and group to
+compare click-through rates. For example, 20 clicks / 1,000 impressions = 2%.
+Repeated clicks count separately, so this is not a unique-visitor conversion rate.
+
+An impression means at least half of that button entered the browser viewport.
+Each button ID counts once per page load, even if you scroll away and back.
+A refresh can produce another impression. This measures viewport visibility,
+not a minimum viewing time or confirmed attention. Tracking includes late-loading
+sticky offers. The code sends all events automatically once the test is enabled.
+
+| Event | What it counts |
+| --- | --- |
+| `landing_experiment_exposure` | A visit to the assigned landing page, once per page load |
+| `landing_experiment_cta_impression` | A button becomes at least 50% visible, once per button ID per page load |
+| `landing_experiment_cta_click` | A click on a tracked button or store badge |
+
+All three events include `experiment_id = landing-design-v1` and the `variant`.
+Button events also include `link_id`, shown as Landing button:
+
+| Button ID | Button |
+| --- | --- |
+| `quick-answer-download-btn` | Original page's quick-answer button |
+| `cubtale-btn` | Download button in the Cubtale review |
+| `sticky-cubtale-download-btn` | Sticky app download at the bottom of the screen |
+| `cubtale-app-store-btn` | App Store badge in the variation |
+| `cubtale-google-play-btn` | Google Play badge in the variation |
+| `free-pump-btn` | Geography-dependent free-pump offer; analyze separately from downloads |
+
+### A second report: landing page impressions and users
+
+The button report above filters out page exposures. Create this separate report
+to see how many tracked users saw each design, whether or not they clicked.
+The existing `landing_experiment_exposure` event already measures this; no new
+tracking code or custom dimension is needed.
+
+1. Click **Explore → Blank**. Name it **Landing page impressions**.
+2. In **Variables → Dimensions → +**, import **Event name**, **Landing experiment**,
+   and **Landing variant**.
+3. In **Variables → Metrics → +**, import **Event count** and **Total users**.
+4. In **Tab settings → Rows**, add **Landing variant**. Leave **Columns** empty.
+5. In **Values**, add **Event count** and **Total users**.
+6. In **Filters**, add **Landing experiment → exactly matches → landing-design-v1**.
+7. Add **Event name → exactly matches → landing_experiment_exposure**.
+8. Set the date range to start when the experiment was enabled.
+
+`original` means A; `redesign` means B. **Event count** is page impressions
+(one per tracked page load, including refreshes). **Total users** is GA's count
+of distinct users who triggered that exposure event during the selected period.
+Use the total row for overall users; summing variant user counts can double-count
+users who appear in both groups. These are visitors GA can measure, not every
+server request. The report covers the active root-page experiment; it excludes
+direct `/homepage` previews and visits while the test is disabled.
+
+For overall page click-through performance, use another report with Landing
+variant in Rows, Event name in Columns, Event count in Values, and the same
+experiment filter. Set Event name → matches regex to
+`^landing_experiment_(exposure|cta_click)$`, then compare clicks per page exposure.
+Keep this denominator distinct from button impressions.
+
+These counts do not confirm app installs. Reports only contain events collected
+after the corresponding code is deployed and the test is enabled; button
+impressions cannot be reconstructed for earlier visits. If the three custom
+definitions from Step 5 already exist, keep them. No new custom dimension is needed.
+Google's [Explorations guide](https://support.google.com/analytics/answer/7579450)
+explains the Variables and Tab settings controls.
 
 For AppsFlyer attribution, generated download links carry:
 

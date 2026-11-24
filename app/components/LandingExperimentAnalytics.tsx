@@ -17,6 +17,7 @@ type AnalyticsWindow = Window & {
   gtag?: (command: "event", eventName: string, parameters: EventParameters) => void;
   dataLayer?: unknown[];
   __landingExperimentExposure?: string;
+  __landingExperimentImpressions?: Set<string>;
 };
 
 function currentVariant(): LandingVariant | null {
@@ -66,6 +67,8 @@ function ctaLinkId(link: HTMLAnchorElement): string | null {
       "cubtale-btn",
       "sticky-cubtale-download-btn",
       "redesign-cubtale-download-btn",
+      "cubtale-app-store-btn",
+      "cubtale-google-play-btn",
     ];
     return knownIds.includes(link.id) ? link.id : "cubtale-download";
   }
@@ -102,7 +105,52 @@ export function LandingExperimentAnalytics({ enabled }: { enabled: boolean }) {
       });
     }
     document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+
+    let visibilityObserver: IntersectionObserver | undefined;
+    let mutationObserver: MutationObserver | undefined;
+    if (typeof IntersectionObserver !== "undefined") {
+      const impressions = analytics.__landingExperimentImpressions ??= new Set();
+      const observed = new WeakSet<HTMLAnchorElement>();
+      visibilityObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting || entry.intersectionRatio < 0.5) continue;
+          const link = entry.target as HTMLAnchorElement;
+          const activeVariant = currentVariant();
+          const linkId = ctaLinkId(link);
+          if (!activeVariant || !linkId) continue;
+          const key = `${LANDING_EXPERIMENT_ID}:${activeVariant}:${linkId}`;
+          if (!impressions.has(key)) {
+            track("landing_experiment_cta_impression", {
+              experiment_id: LANDING_EXPERIMENT_ID,
+              variant: activeVariant,
+              link_id: linkId,
+            });
+            impressions.add(key);
+          }
+          visibilityObserver?.unobserve(link);
+        }
+      }, { threshold: 0.5 });
+
+      function observeLinks() {
+        for (const link of document.querySelectorAll<HTMLAnchorElement>("a[href]")) {
+          if (observed.has(link) || !ctaLinkId(link)) continue;
+          observed.add(link);
+          visibilityObserver?.observe(link);
+        }
+      }
+      observeLinks();
+      // The country-specific sticky offer is inserted after its lookup completes.
+      if (typeof MutationObserver !== "undefined") {
+        mutationObserver = new MutationObserver(observeLinks);
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
+      }
+    }
+
+    return () => {
+      document.removeEventListener("click", onClick);
+      visibilityObserver?.disconnect();
+      mutationObserver?.disconnect();
+    };
   }, [enabled]);
 
   return null;
